@@ -1,11 +1,11 @@
 <script setup>
     defineProps({
-        cardtitle: String,
+        SentenceTemplate: String,
     })
 </script>
 
 <template>
-    <h2> {{  cardtitle }}</h2>   
+    <h2> {{  SentenceTemplate }}</h2>   
 </template>
 
 <style scoped>
@@ -13,4 +13,3 @@
         font-size: 2em;
     }
 </style>
-
