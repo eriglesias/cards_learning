@@ -1,13 +1,11 @@
 <script setup>
-import CardTitle from './components/CardTitle.vue';
-import SentenceTemplate from './components/SentenceTemplate.vue';
-import titleTest from './data/card.json';
+import LearningCard from './components/learning-card.vue';
+import jsonTest from './data/card.json'
 </script>
 
 <template>
   <div>
-  <CardTitle v-bind:cardtitle="titleTest.verbInfinitive"/>
-  <SentenceTemplate v-bind:SentenceTemplate="titleTest.sentenceTemplate"/>
+  <LearningCard v-bind:learning-card="jsonTest.LearningCard"/>
   </div>
 </template>
 
@@ -16,3 +14,4 @@ import titleTest from './data/card.json';
     font-family: Helvetica;
   } 
 </style>
+
