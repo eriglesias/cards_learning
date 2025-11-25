@@ -1,12 +1,12 @@
 <script setup>
     import jsonTest from '../data/card.json'
     defineProps({
-        verbInfinitive: String,
+        answer: String,
     })
 </script>
 
 <template>
-    <h2> {{  jsonTest.verbInfinitive }}</h2>   
+    <h2> {{  jsonTest.answer }}</h2>   
 </template>
 
 <style scoped>

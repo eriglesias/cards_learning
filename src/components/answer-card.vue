@@ -1,18 +1,14 @@
 
 <script setup>
     import CardTitle from './card-title.vue';
-    import SentenceTemplate from './sentence-template.vue';
-    const msg = "Hello!"
-    import {log} from '../data/helpers_test'
+    import Answer from './answer.vue';
 </script>
 
 <template>
   <div>
   <CardTitle v-bind:card-title/>
-  <SentenceTemplate v-bind:sentence-template/>
-   <button @click="log"> {{ msg }}</button>
+  <Answer v-bind:answer/>
   </div>
- 
 </template>
 
 
@@ -21,14 +17,9 @@
         background-color: white;
         border-radius: 5px;
         padding: 20px;
+        color: black;
     }
-
     div {
         border: 2px solid brown;
     }
-
-    button {
-        background-color: red;
-    }
-
 </style>

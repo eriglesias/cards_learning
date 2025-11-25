@@ -3,7 +3,7 @@
     "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
     "id": "1.1",
     "verbInfinitive": "antworten",
-    "sentenceTemplate":"Ich antworte [dir]",
+    "sentenceTemplate":"Ich antworte [?]",
     "answer": "Ich antworte dir",
     "caseRequired":"dativ",
     "color": "blue"
