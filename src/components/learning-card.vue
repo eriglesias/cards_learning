@@ -3,7 +3,7 @@
     import CardTitle from './card-title.vue';
     import SentenceTemplate from './sentence-template.vue';
     const msg = "Hello!"
-    import {log} from '../data/helpers_test'
+    //import {log} from '../data/helpers_test'
 </script>
 
 <template>
