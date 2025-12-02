@@ -1,9 +1,12 @@
 <script setup>
     //import jsonTest from '../data/card.json'
+     const props = defineProps({
+        cardTitle: String
+    })
 </script>
 
 <template>
-    <h2> {{  props.verbInfinitive }}</h2>   
+    <h2> {{  props.cardTitle }}</h2>   
 </template>
 
 <style scoped>

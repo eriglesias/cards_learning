@@ -1,5 +1,8 @@
 <script setup>
     //import jsonTest from '../data/card.json'
+    const props = defineProps({
+        answer: String
+    })
 </script>
 
 <template>

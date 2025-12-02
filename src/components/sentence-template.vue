@@ -1,6 +1,6 @@
 <script setup>
     //import jsonTest from '../data/card.json'
-    defineProps({
+    const props = defineProps({
         sentenceTemplate: String,
     })
 </script>
@@ -15,3 +15,5 @@
         color: black;
     }
 </style>
+
+   

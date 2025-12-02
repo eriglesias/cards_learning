@@ -1,4 +1,5 @@
-{
+[
+    {
     "thema": "Verben mit Dativobjekt",
     "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
     "id": "1.1",
@@ -7,4 +8,489 @@
     "answer": "Ich antworte dir",
     "caseRequired":"dativ",
     "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "applaudieren",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "begegnen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "beistehen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "danken",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "drohen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "folgen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "gehorchen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "glauben",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "gratulieren",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "helfen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "helfen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "misstrauen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "vertrauen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "verzeihen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "widersprechen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "zuhören",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "zusehen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "zustimmen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
 }
+]
+
+
+
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit unpersönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "fehlen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit unpersönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "gefallen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit unpersönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "gehören",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit unpersönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "gelingen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit unpersönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "genügen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit unpersönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "fmisslingen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit unpersönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "nützen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit unpersönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "passieren",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit unpersönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "schaden",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit unpersönlichem Subjekt + Dativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "schmecken",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+}
+
+
+
+
+
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit Dativobjekt + Akkusativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "anbieten",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit Dativobjekt + Akkusativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "beantworten",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit Dativobjekt + Akkusativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "befehlen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit Dativobjekt + Akkusativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "bringen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit Dativobjekt + Akkusativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "empfehlen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit Dativobjekt + Akkusativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "empfehlen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit Dativobjekt + Akkusativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "erklären",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit Dativobjekt + Akkusativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "erzählen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit Dativobjekt + Akkusativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "geben",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit Dativobjekt + Akkusativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "glauben",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit Dativobjekt + Akkusativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "leihen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit Dativobjekt + Akkusativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "liefern",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit Dativobjekt + Akkusativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "nehmen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit Dativobjekt + Akkusativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "sagen",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit Dativobjekt + Akkusativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "schenken",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit Dativobjekt + Akkusativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "schicken",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit Dativobjekt + Akkusativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "schreiben",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+{
+    "thema": "Verben mit Dativobjekt",
+    "subthema": "Verben mit Dativobjekt + Akkusativobjekt",
+    "id": "1.1",
+    "verbInfinitive": "",
+    "sentenceTemplate":"Ich applaudiere [?]",
+    "answer": "Ich applaudiere dir",
+    "caseRequired":"dativ",
+    "color": "blue"
+},
+
+
+
+
+
+
+
+
