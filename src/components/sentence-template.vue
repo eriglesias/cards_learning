@@ -1,12 +1,11 @@
 <script setup>
-    //import jsonTest from '../data/card.json'
     const props = defineProps({
         sentenceTemplate: String,
     })
 </script>
 
 <template>
-    <h2> {{ props.sentenceTemplate }}</h2>   
+    <h2> {{ props.sentenceTemplate }}</h2>  
 </template>
 
 <style scoped>
