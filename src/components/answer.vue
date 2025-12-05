@@ -12,7 +12,7 @@
 <style scoped>
     h2 {
         font-size: 2em;
-        color: black;
+        color: #FFCD00;
     }
 </style>
 
