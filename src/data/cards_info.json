@@ -1,13 +1,17 @@
-[
+ [
      {
         "thema": "Verben mit Dativobjekt",
-        "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
-        "id": "1.1",
-        "verbInfinitive": "antworten",
-        "sentenceTemplate":"Ich antworte [?]",
-        "answer": " dir",
-        "caseRequired":"dativ",
-        "color": "blue"
+        "entries": [
+             {
+                "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
+                "id": "1.1",
+                "verbInfinitive": "antworten",
+                "sentenceTemplate":"Ich antworte [?]",
+                "answer": " dir",
+                "caseRequired":"dativ",
+                "color": "blue"
+            }
+         ]
         },
     {
         "thema": "Verben mit Dativobjekt",
@@ -130,54 +134,54 @@
         "color": "blue"
     },
     {
-            "thema": "Verben mit Dativobjekt",
-            "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
-            "id": "1.14",
-            "verbInfinitive": "vertrauen",
-            "sentenceTemplate":"Ich applaudiere [?]",
-            "answer": " dir",
-            "caseRequired":"dativ",
-            "color": "blue"
+         "thema": "Verben mit Dativobjekt",
+         "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
+         "id": "1.14",
+        "verbInfinitive": "vertrauen",
+         "sentenceTemplate":"Ich applaudiere [?]",
+        "answer": " dir",
+        "caseRequired":"dativ",
+        "color": "blue"
     },
     {
-            "thema": "Verben mit Dativobjekt",
-            "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
-            "id": "1.15",
-            "verbInfinitive": "verzeihen",
-            "sentenceTemplate":"Ich applaudiere [?]",
-            "answer": " dir",
-            "caseRequired":"dativ",
-            "color": "blue"
+        "thema": "Verben mit Dativobjekt",
+        "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
+        "id": "1.15",
+        "verbInfinitive": "verzeihen",
+        "sentenceTemplate":"Ich applaudiere [?]",
+        "answer": " dir",
+        "caseRequired":"dativ",
+        "color": "blue"
     },
     {
-            "thema": "Verben mit Dativobjekt",
-            "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
-            "id": "1.16",
-            "verbInfinitive": "widersprechen",
-            "sentenceTemplate":"Ich applaudiere [?]",
-            "answer": " dir",
-            "caseRequired":"dativ",
-            "color": "blue"
+        "thema": "Verben mit Dativobjekt",
+        "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
+        "id": "1.16",
+        "verbInfinitive": "widersprechen",
+        "sentenceTemplate":"Ich applaudiere [?]",
+        "answer": " dir",
+        "caseRequired":"dativ",
+        "color": "blue"
     },
     {
-            "thema": "Verben mit Dativobjekt",
-            "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
-            "id": "1.17",
-            "verbInfinitive": "zuhören",
-            "sentenceTemplate":"Ich applaudiere [?]",
-            "answer": " dir",
-            "caseRequired":"dativ",
-            "color": "blue"
+        "thema": "Verben mit Dativobjekt",
+        "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
+        "id": "1.17",
+        "verbInfinitive": "zuhören",
+        "sentenceTemplate":"Ich applaudiere [?]",
+        "answer": " dir",
+        "caseRequired":"dativ",
+        "color": "blue"
     },
     {
-            "thema": "Verben mit Dativobjekt",
-            "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
-            "id": "1.18",
-            "verbInfinitive": "zusehen",
-            "sentenceTemplate":"Ich applaudiere [?]",
-            "answer": " dir",
-            "caseRequired":"dativ",
-            "color": "blue"
+        "thema": "Verben mit Dativobjekt",
+        "subthema": "Verben mit persönlichem Subjekt + Dativobjekt",
+        "id": "1.18",
+        "verbInfinitive": "zusehen",
+        "sentenceTemplate":"Ich applaudiere [?]",
+        "answer": " dir",
+        "caseRequired":"dativ",
+        "color": "blue"
     },
     {
             "thema": "Verben mit Dativobjekt",
@@ -527,22 +531,6 @@
         "caseRequired":"dativ",
         "color": "blue"
     }
-
 ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

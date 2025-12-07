@@ -1,6 +1,6 @@
 
 <script setup>
-    import cards from '../data/card.json';
+    import cards from '../data/cards_info.json';
     import CardTitle from './card-title.vue';
     import SentenceTemplate from './sentence-template.vue';
     import Answer from './answer.vue';
@@ -18,6 +18,7 @@
         return `Ich ${stem}e`
     }
 
+    
 </script>
 
 <template>
