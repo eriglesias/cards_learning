@@ -7,7 +7,7 @@
                         {
                             "id": "1.1",
                             "verbInfinitive": "antworten",
-                            "sentenceTemplate": "Ich antworte [?]",
+                            "sentenceTemplate": "Ich [?]",
                             "answer": "dir",
                             "caseRequired": "dativ",
                             "color": "blue"
@@ -15,12 +15,234 @@
                         {
                             "id": "1.2",
                             "verbInfinitive": "applaudieren",
-                            "sentenceTemplate": "Ich applaudiere [?]",
+                            "sentenceTemplate": "Ich [?]",
+                            "answer": "dir",
+                            "caseRequired": "dativ",
+                            "color": "blue"
+                        },
+                        {
+                            "id": "1.2",
+                            "verbInfinitive": "begegnen",
+                            "sentenceTemplate": "Ich [?]",
+                            "answer": "dir",
+                            "caseRequired": "dativ",
+                            "color": "blue"
+                        },
+                        {
+                            "id": "1.2",
+                            "verbInfinitive": "beistehen",
+                            "sentenceTemplate": "Ich  [?]",
+                            "answer": "dir",
+                            "caseRequired": "dativ",
+                            "color": "blue"
+                        },
+                        {
+                            "id": "1.2",
+                            "verbInfinitive": "danken",
+                            "sentenceTemplate": "Ich  [?]",
                             "answer": "dir",
                             "caseRequired": "dativ",
                             "color": "blue"
                         }
-                    ]}
+                ],
+                "unpersoenliches_subjekt": [
+                    {
+                         "id": "2.2",
+                         "verbInfinitive": "gefallen",
+                         "sentenceTemplate":"Es fehlt [?]",
+                         "answer": " dir",
+                         "caseRequired":"dativ",
+                         "color": "blue"
+                    },
+                    {
+                        "id": "2.4",
+                        "verbInfinitive": "gelingen",
+                        "sentenceTemplate":"Es fehlt [?]",
+                        "answer": " dir",
+                        "caseRequired":"dativ",
+                        "color": "blue"
+                    },
+                    {
+                        "id": "2.5",
+                        "verbInfinitive": "genügen",
+                        "sentenceTemplate":"Es fehlt [?]",
+                        "answer": " dir",
+                        "caseRequired":"dativ",
+                        "color": "blue"
+                    },
+                    {
+                        "id": "2.6",
+                        "verbInfinitive": "misslingen",
+                        "sentenceTemplate":"Es fehlt [?]",
+                        "answer": " dir",
+                        "caseRequired":"dativ",
+                        "color": "blue"
+                    }
+                ]
                 }
-            }
-        }
+             }, "Verben mit Dativobjekt + Akkusativobjekt": {
+                    "mixed":[ {
+                        "id": "3.5",
+                            "verbInfinitive": "empfehlen",
+                            "sentenceTemplate":" [?] etwas ",
+                            "answer": " dir",
+                            "caseRequired":"dativ",
+                            "color": "blue"
+                        },
+                        {
+                            "id": "3.10",
+                            "verbInfinitive": "glauben",
+                            "sentenceTemplate":" [?] etwas ",
+                            "answer": " dir",
+                            "caseRequired":"dativ",
+                            "color": "blue"
+                        }, 
+                        {
+                            "id": "3.11",
+                            "verbInfinitive": "leihen",
+                            "sentenceTemplate":" [?] etwas ",
+                            "answer": " dir",
+                            "caseRequired":"dativ",
+                            "color": "blue"
+                        },
+                        {
+                            "id": "3.12",
+                            "verbInfinitive": "liefern",
+                            "sentenceTemplate":" [?] etwas ",
+                            "answer": " dir",
+                            "caseRequired":"dativ",
+                            "color": "blue"
+                        }
+                    ]
+                }, "Verben mit Präpositionalobjekt": {
+                        "mixed": [
+                            {
+                            "id": "4.1",
+                                "verbInfinitive": "abhängen",
+                                "sentenceTemplate":" [?] etwas ",
+                                "answer": " von",
+                                "caseRequired":"dativ",
+                                "color": "blue"
+                            },
+                            {
+                                "id": "4.2",
+                                "verbInfinitive": "abraten",
+                                "sentenceTemplate":" [?] etwas ",
+                                "answer": " von",
+                                "caseRequired":"dativ",
+                                "color": "blue"
+                            },
+                            {
+                                "id": "4.3",
+                                "verbInfinitive": "achten / Acht geben",
+                                "sentenceTemplate":"auf",
+                                "answer": " von",
+                                "caseRequired":"dativ",
+                                "color": "blue"
+                            },
+                            {
+                                "id": "4.4",
+                                "verbInfinitive": "anfangen",
+                                "sentenceTemplate":" [?] etwas ",
+                                "answer": "mit",
+                                "caseRequired":"dativ",
+                                "color": "blue"
+                            }, {
+                                "id": "4.5",
+                                "verbInfinitive": "sich anmelden",
+                                "sentenceTemplate":" [?] etwas ",
+                                "answer": "für",
+                                "caseRequired":"akkusativ",
+                                "color": "yellow"
+                            }
+                    ]
+                 } 
+            }, "Präpositionen": {
+                    "Präpositionen mit Akkusativ": {
+                        "mixed": [
+                            {
+                                "id": "5.1.1",
+                                "präposition": "bis",
+                                "caseRequired": "akkusativ",
+                                "color":"yellow"
+                            },
+                            {
+                                "id": "5.1.2",
+                                "präposition": "durch",
+                                "caseRequired": "akkusativ",
+                                "color":"yellow"
+                            },
+                            {
+                                "id": "5.1.3",
+                                "präposition": "für",
+                                "caseRequired": "akkusativ",
+                                "color":"yellow"
+                            },
+                            {
+                                "id": "5.1.4",
+                                "präposition": "gegen",
+                                "caseRequired": "akkusativ",
+                                "color":"yellow"
+                            },
+                            {
+                                "id": "5.1.5",
+                                "präposition": "ohne",
+                                "caseRequired": "akkusativ",
+                                "color":"yellow"
+                            },
+                            {
+                                "id": "5.1.6",
+                                "präposition": "um",
+                                "caseRequired": "akkusativ",
+                                "color":"yellow"
+                            }
+                        ]
+                    }, "Präpositionen mit Dativ": {
+                        "mixed": [
+                            {
+                                "id": "5.2.1",
+                                "präposition": "aus",
+                                "caseRequired": "dativ",
+                                "color":"blue"
+                            },
+                            {
+                                "id": "5.2.2",
+                                "präposition": "bei",
+                                "caseRequired": "dativ",
+                                "color":"blue"
+                            },
+                            {
+                                "id": "5.2.3",
+                                "präposition": "gegenüber",
+                                "caseRequired": "dativ",
+                                "color":"blue"
+                            },
+                            {
+                                "id": "5.2.4",
+                                "präposition": "mit",
+                                "caseRequired": "dativ",
+                                "color":"blue"
+                            },
+                            {
+                                "id": "5.2.5",
+                                "präposition": "nach",
+                                "caseRequired": "dativ",
+                                "color":"blue"
+                            },
+                            {
+                                "id": "5.2.6",
+                                "präposition": "seit",
+                                "caseRequired": "dativ",
+                                "color":"blue"
+                            }
+                        ]
+                     }
+     }
+}
+
+
+   
+
+
+   
+  
