@@ -16,39 +16,46 @@
                         },
                         {
                             "id": "verb-applaudieren",
+                            "kind": "verb",
                             "verbInfinitive": "applaudieren",
                             "sentenceTemplate": "Ich [?]",
                             "answer": "dir",
+                            "subjectType": "personal",
                             "caseRequired": "dativ",
                             "color": "blue"
                         },
                         {
                             "id": "verb-begegnen",
+                            "kind": "verb",
                             "verbInfinitive": "begegnen",
                             "sentenceTemplate": "Ich [?]",
                             "answer": "dir",
+                            "subjectType": "personal",
                             "caseRequired": "dativ",
                             "color": "blue"
                         },
                         {
                             "id": "verb-beistehen",
+                            "kind": "verb",
                             "verbInfinitive": "beistehen",
                             "sentenceTemplate": "Ich  [?]",
                             "answer": "dir",
+                            "subjectType": "personal",
                             "caseRequired": "dativ",
                             "color": "blue"
                         },
                         {
                             "id": "verb-danken",
+                            "kind": "verb",
                             "verbInfinitive": "danken",
                             "sentenceTemplate": "Ich  [?]",
                             "answer": "dir",
+                            "subjectType": "personal",
                             "caseRequired": "dativ",
                             "color": "blue"
                         }
                 ],
-                "unpersoenliches_subjekt": [
-                    
+                "unpersoenliches_subjekt": [ 
                     {
                         "id": "verb-fehlen",
                         "kind": "verb",
@@ -62,6 +69,8 @@
                     },                    
                     {
                          "id": "verb-gefallen",
+                         "kind": "verb",
+                         "subjectType": "impersonal",
                          "verbInfinitive": "gefallen",
                          "sentenceTemplate":"Es gefällt [?]",
                          "answer": " dir",
@@ -70,6 +79,8 @@
                     },
                     {
                         "id": "verb-gelingen",
+                        "kind": "verb",
+                        "subjectType": "impersonal",
                         "verbInfinitive": "gelingen",
                         "sentenceTemplate":"Es gelingt [?]",
                         "answer": " dir",
@@ -78,6 +89,8 @@
                     },
                     {
                         "id": "verb-gegenueber",
+                        "kind": "verb",
+                        "subjectType": "impersonal",
                         "verbInfinitive": "genügen",
                         "sentenceTemplate":"Es genügt [?]",
                         "answer": " dir",
@@ -86,6 +99,8 @@
                     },
                     {
                         "id": "verb-misslingen",
+                        "kind": "verb",
+                        "subjectType": "impersonal",
                         "verbInfinitive": "misslingen",
                         "sentenceTemplate":"Es misslingt [?]",
                         "answer": " dir",
@@ -94,6 +109,8 @@
                     },
                      {
                         "id": "verb-nuetzen",
+                        "kind": "verb",
+                        "subjectType": "impersonal",
                         "verbInfinitive": "nützen",
                         "sentenceTemplate":"Es nützt [?]",
                         "answer": " dir",
@@ -102,6 +119,8 @@
                     },
                      {
                         "id": "verb-passieren",
+                        "kind": "verb",
+                        "subjectType": "impersonal",
                         "verbInfinitive": "passieren",
                         "sentenceTemplate":"Es passiert [?]",
                         "answer": " dir",
@@ -110,6 +129,8 @@
                     },
                      {
                         "id": "verb-schaden",
+                        "kind": "verb",
+                        "subjectType": "impersonal",
                         "verbInfinitive": "schaden",
                         "sentenceTemplate":"Es schädt [?]",
                         "answer": " dir",
@@ -118,6 +139,8 @@
                     },
                      {
                         "id": "verb-schmecken",
+                        "kind": "verb",
+                        "subjectType": "impersonal",
                         "verbInfinitive": "schmecken",
                         "sentenceTemplate":"Es schmeckt [?]",
                         "answer": " dir",
@@ -127,43 +150,415 @@
                 ]
                 }
              }, "Verben mit Dativobjekt + Akkusativobjekt": 
-                 [ {
+                 [ 
+                  {
+                     "id": "verb-anbieten",
+                        "kind": "verb",
+                        "verbInfinitive": "anbieten",
+                        "subjectType": "personal",
+                        "arguments": {
+                            "indirectObject": {
+                                "case": "dativ",
+                                "color": "blue",
+                                "example": "dir"
+                            },
+                            "directObjekt": {
+                                "case": "akkusativ",
+                                "color": "yellow",
+                                "example": "etwas"
+                            },
+                            "sentenceTemplate": "Ich anbieten [?] [?]"
+                        }
+                  },
+                  {
+                     "id": "verb-beantworten",
+                        "kind": "verb",
+                        "verbInfinitive": "beantworten",
+                        "subjectType": "personal",
+                        "arguments": {
+                            "indirectObject": {
+                                "case": "dativ",
+                                "color": "blue",
+                                "example": "dir"
+                            },
+                            "directObjekt": {
+                                "case": "akkusativ",
+                                "color": "yellow",
+                                "example": "etwas"
+                            },
+                            "sentenceTemplate": "Ich beantworten [?] [?]"
+                        }
+                  },
+                  {
+                     "id": "verb-befehlen",
+                        "kind": "verb",
+                        "verbInfinitive": "befehlen",
+                        "subjectType": "personal",
+                        "arguments": {
+                            "indirectObject": {
+                                "case": "dativ",
+                                "color": "blue",
+                                "example": "dir"
+                            },
+                            "directObjekt": {
+                                "case": "akkusativ",
+                                "color": "yellow",
+                                "example": "etwas"
+                            },
+                            "sentenceTemplate": "Ich befehle [?] [?]"
+                        }
+                  },  
+                    {
+                        "id": "verb-bringen",
+                            "kind": "verb",
+                            "verbInfinitive": "bringen",
+                            "subjectType": "personal",
+                            "arguments": {
+                                "indirectObject": {
+                                    "case": "dativ",
+                                    "color": "blue",
+                                    "example": "dir"
+                                },
+                                "directObjekt": {
+                                    "case": "akkusativ",
+                                    "color": "yellow",
+                                    "example": "etwas"
+                                },
+                                "sentenceTemplate": "Ich bringen [?] [?]"
+                            }
+
+                    },
+                 {
                         "id": "verb-empfehlen",
+                        "kind": "verb",
                         "verbInfinitive": "empfehlen",
-                        "sentenceTemplate":" [?] etwas ",
-                        "answer": " dir",
-                        "caseRequired":"dativ",
-                        "color": "blue"
+                        "subjectType": "personal",
+                        "arguments": {
+                            "indirectObject": {
+                                "case": "dativ",
+                                "color": "blue",
+                                "example": "dir"
+                            },
+                            "directObjekt": {
+                                "case": "akkusativ",
+                                "color": "yellow",
+                                "example": "etwas"
+                            },
+                            "sentenceTemplate": "Ich empfehle [?] [?]"
+                        }
+                    },
+                    {
+                        "id": "verb-erklären",
+                        "kind": "verb",
+                        "verbInfinitive": "erklären",
+                        "subjectType": "personal",
+                        "arguments": {
+                            "indirectObject": {
+                                "case": "dativ",
+                                "color": "blue",
+                                "example": "dir"
+                            },
+                            "directObjekt": {
+                                "case": "akkusativ",
+                                "color": "yellow",
+                                "example": "etwas"
+                            },
+                            "sentenceTemplate": "Ich erkläre [?] [?]"
+                        }
+
+                    },
+                    {
+                        "id": "verb-erzähle",
+                        "kind": "verb",
+                        "verbInfinitive": "erzählen",
+                        "subjectType": "personal",
+                        "arguments": {
+                            "indirectObject": {
+                                "case": "dativ",
+                                "color": "blue",
+                                "example": "dir"
+                            },
+                            "directObjekt": {
+                                "case": "akkusativ",
+                                "color": "yellow",
+                                "example": "etwas"
+                            },
+                            "sentenceTemplate": "Ich erzähle [?] [?]"
+                        }
+                    },
+                    {
+                        "id": "verb-geben",
+                        "kind": "verb",
+                        "verbInfinitive": "geben",
+                        "subjectType": "personal",
+                        "arguments": {
+                            "indirectObject": {
+                                "case": "dativ",
+                                "color": "blue",
+                                "example": "dir"
+                            },
+                            "directObjekt": {
+                                "case": "akkusativ",
+                                "color": "yellow",
+                                "example": "etwas"
+                            },
+                            "sentenceTemplate": "Ich gebe [?] [?]"
+                        }
                     },
                     {
                         "id": "verb-glauben",
+                        "kind": "verb",
                         "verbInfinitive": "glauben",
-                        "sentenceTemplate":" [?] etwas ",
-                        "answer": " dir",
-                        "caseRequired":"dativ",
-                        "color": "blue"
+                        "subjectType": "personal",
+                        "arguments": {
+                            "indirectObject": {
+                                "case": "dativ",
+                                "color": "blue",
+                                "example": "dir"
+                            },
+                            "directObjekt": {
+                                "case": "akkusativ",
+                                "color": "yellow",
+                                "example": "etwas"
+                            },
+                            "sentenceTemplate": "Ich glaube [?] [?]"
+                        }                
                     }, 
                     {
                         "id": "verb-leihen",
+                        "kind": "verb",
                         "verbInfinitive": "leihen",
-                        "sentenceTemplate":" [?] etwas ",
-                        "answer": " dir",
-                        "caseRequired":"dativ",
-                        "color": "blue"
+                        "subjectType": "personal",
+                        "arguments": {
+                            "indirectObject": {
+                                "case": "dativ",
+                                "color": "blue",
+                                "example": "dir"
+                            },
+                            "directObjekt": {
+                                "case": "akkusativ",
+                                "color": "yellow",
+                                "example": "etwas"
+                            },
+                            "sentenceTemplate": "Ich leihe [?] [?]"
+                        }
+                      
                     },
                     {
                         "id": "verb-lieferen",
                         "verbInfinitive": "liefern",
-                        "sentenceTemplate":" [?] etwas ",
-                        "answer": " dir",
-                        "caseRequired":"dativ",
-                        "color": "blue"
+                        "subjectType": "personal",
+                        "kind": "verb",
+                        "arguments": {
+                            "indirectObject": {
+                                "case": "dativ",
+                                "color": "blue",
+                                "example": "dir"
+                            },
+                            "directObjekt": {
+                                "case": "akkusativ",
+                                "color": "yellow",
+                                "example": "etwas"
+                            },
+                            "sentenceTemplate": "Ich liefere [?] [?]"
+                        }  
+                    },
+                    {
+                        "id": "verb-nehmen",
+                        "verbInfinitive": "nehmen",
+                        "subjectType": "personal",
+                        "kind": "verb",
+                        "arguments": {
+                            "indirectObject": {
+                                "case": "dativ",
+                                "color": "blue",
+                                "example": "dir"
+                            },
+                            "directObjekt": {
+                                "case": "akkusativ",
+                                "color": "yellow",
+                                "example": "etwas"
+                            },
+                            "sentenceTemplate": "Ich nehme [?] [?]"
+                        }  
+                    },
+                    {
+                        "id": "verb-sagen",
+                        "verbInfinitive": "sagen",
+                        "subjectType": "personal",
+                        "kind": "verb",
+                        "arguments": {
+                            "indirectObject": {
+                                "case": "dativ",
+                                "color": "blue",
+                                "example": "dir"
+                            },
+                            "directObjekt": {
+                                "case": "akkusativ",
+                                "color": "yellow",
+                                "example": "etwas"
+                            },
+                            "sentenceTemplate": "Ich sage [?] [?]"
+                        }  
+                    },
+                    {
+                        "id": "verb-schenken",
+                        "verbInfinitive": "schenken",
+                        "subjectType": "personal",
+                        "kind": "verb",
+                        "arguments": {
+                            "indirectObject": {
+                                "case": "dativ",
+                                "color": "blue",
+                                "example": "dir"
+                            },
+                            "directObjekt": {
+                                "case": "akkusativ",
+                                "color": "yellow",
+                                "example": "etwas"
+                            },
+                            "sentenceTemplate": "Ich schenke [?] [?]"
+                        }  
+                    },
+                    {
+                        "id": "verb-schicken",
+                        "verbInfinitive": "schicken",
+                        "subjectType": "personal",
+                        "kind": "verb",
+                        "arguments": {
+                            "indirectObject": {
+                                "case": "dativ",
+                                "color": "blue",
+                                "example": "dir"
+                            },
+                            "directObjekt": {
+                                "case": "akkusativ",
+                                "color": "yellow",
+                                "example": "etwas"
+                            },
+                            "sentenceTemplate": "Ich schicke [?] [?]"
+                        }  
+                    },
+                    {
+                        "id": "verb-schreiben",
+                        "verbInfinitive": "schreiben",
+                        "subjectType": "personal",
+                        "kind": "verb",
+                        "arguments": {
+                            "indirectObject": {
+                                "case": "dativ",
+                                "color": "blue",
+                                "example": "dir"
+                            },
+                            "directObjekt": {
+                                "case": "akkusativ",
+                                "color": "yellow",
+                                "example": "etwas"
+                            },
+                            "sentenceTemplate": "Ich schreibe [?] [?]"
+                        }  
+                    },
+                    {
+                        "id": "verb-senden",
+                        "verbInfinitive": "senden",
+                        "subjectType": "personal",
+                        "kind": "verb",
+                        "arguments": {
+                            "indirectObject": {
+                                "case": "dativ",
+                                "color": "blue",
+                                "example": "dir"
+                            },
+                            "directObjekt": {
+                                "case": "akkusativ",
+                                "color": "yellow",
+                                "example": "etwas"
+                            },
+                            "sentenceTemplate": "Ich sende [?] [?]"
+                        }  
+                    },
+                    {
+                        "id": "verb-stehlen",
+                        "verbInfinitive": "stehlen",
+                        "subjectType": "personal",
+                        "kind": "verb",
+                        "arguments": {
+                            "indirectObject": {
+                                "case": "dativ",
+                                "color": "blue",
+                                "example": "dir"
+                            },
+                            "directObjekt": {
+                                "case": "akkusativ",
+                                "color": "yellow",
+                                "example": "etwas"
+                            },
+                            "sentenceTemplate": "Ich stehle [?] [?]"
+                        }  
+                    },
+                    {
+                        "id": "verb-verbieten",
+                        "verbInfinitive": "verbieten",
+                        "subjectType": "personal",
+                        "kind": "verb",
+                        "arguments": {
+                            "indirectObject": {
+                                "case": "dativ",
+                                "color": "blue",
+                                "example": "dir"
+                            },
+                            "directObjekt": {
+                                "case": "akkusativ",
+                                "color": "yellow",
+                                "example": "etwas"
+                            },
+                            "sentenceTemplate": "Ich verbiete [?] [?]"
+                        }  
+                    },
+                    {
+                        "id": "verb-versprechen",
+                        "verbInfinitive": "versprechen",
+                        "subjectType": "personal",
+                        "kind": "verb",
+                        "arguments": {
+                            "indirectObject": {
+                                "case": "dativ",
+                                "color": "blue",
+                                "example": "dir"
+                            },
+                            "directObjekt": {
+                                "case": "akkusativ",
+                                "color": "yellow",
+                                "example": "etwas"
+                            },
+                            "sentenceTemplate": "Ich verspreche [?] [?]"
+                        }  
+                    },
+                    {
+                        "id": "verb-zeigen",
+                        "verbInfinitive": "zeigen",
+                        "subjectType": "personal",
+                        "kind": "verb",
+                        "arguments": {
+                            "indirectObject": {
+                                "case": "dativ",
+                                "color": "blue",
+                                "example": "dir"
+                            },
+                            "directObjekt": {
+                                "case": "akkusativ",
+                                "color": "yellow",
+                                "example": "etwas"
+                            },
+                            "sentenceTemplate": "Ich zeige [?] [?]"
+                        }  
                     }
                 ], "Verben mit Präpositionalobjekt": 
                         [
                             {
                             "id": "verb-abhaengen",
                                 "verbInfinitive": "abhängen",
+                                "kind": "verb",
                                 "sentenceTemplate":" [?] etwas ",
                                 "answer": " von",
                                 "caseRequired":"dativ",
@@ -171,6 +566,7 @@
                             },
                             {
                                 "id": "verb-abraten",
+                                "kind": "verb",
                                 "verbInfinitive": "abraten",
                                 "sentenceTemplate":" [?] etwas ",
                                 "answer": " von",
@@ -179,6 +575,7 @@
                             },
                             {
                                 "id": "verb-achten",
+                                "kind": "verb",
                                 "verbInfinitive": "achten / Acht geben",
                                 "sentenceTemplate":"auf",
                                 "answer": " von",
@@ -187,6 +584,7 @@
                             },
                             {
                                 "id": "verb-anfangen",
+                                "kind": "verb",
                                 "verbInfinitive": "anfangen",
                                 "sentenceTemplate":" [?] etwas ",
                                 "answer": "mit",
@@ -194,6 +592,7 @@
                                 "color": "blue"
                             }, {
                                 "id": "verb-sich-anmelden",
+                                "kind": "verb",
                                 "verbInfinitive": "sich anmelden",
                                 "sentenceTemplate":" [?] etwas ",
                                 "answer": "für",
@@ -206,36 +605,42 @@
                          [
                             {
                                 "id": "prep-bis",
+                                "kind": "preposition",
                                 "präposition": "bis",
                                 "caseRequired": "akkusativ",
                                 "color":"yellow"
                             },
                             {
                                 "id": "prep-durch",
+                                "kind": "preposition",
                                 "präposition": "durch",
                                 "caseRequired": "akkusativ",
                                 "color":"yellow"
                             },
                             {
                                 "id": "prep-fuer",
+                                "kind": "preposition",
                                 "präposition": "für",
                                 "caseRequired": "akkusativ",
                                 "color":"yellow"
                             },
                             {
                                 "id": "prep-gegen",
+                                 "kind": "preposition",
                                 "präposition": "gegen",
                                 "caseRequired": "akkusativ",
                                 "color":"yellow"
                             },
                             {
                                 "id": "prep-ohne",
+                                "kind": "preposition",
                                 "präposition": "ohne",
                                 "caseRequired": "akkusativ",
                                 "color":"yellow"
                             },
                             {
                                 "id": "prep-um",
+                                "kind": "preposition",
                                 "präposition": "um",
                                 "caseRequired": "akkusativ",
                                 "color":"yellow"
@@ -244,48 +649,56 @@
                          [
                             {
                                 "id": "prep-aus",
+                                "kind": "preposition",
                                 "präposition": "aus",
                                 "caseRequired": "dativ",
                                 "color":"blue"
                             },
                             {
                                 "id": "prep-bei",
+                                "kind": "preposition",
                                 "präposition": "bei",
                                 "caseRequired": "dativ",
                                 "color":"blue"
                             },
                             {
                                 "id": "prep-gegenueber",
+                                "kind": "preposition",
                                 "präposition": "gegenüber",
                                 "caseRequired": "dativ",
                                 "color":"blue"
                             },
                             {
                                 "id": "prep-mit",
+                                "kind": "preposition",
                                 "präposition": "mit",
                                 "caseRequired": "dativ",
                                 "color":"blue"
                             },
                             {
                                 "id": "prep-nach",
+                                "kind": "preposition",
                                 "präposition": "nach",
                                 "caseRequired": "dativ",
                                 "color":"blue"
                             },
                             {
                                 "id": "prep-seit",
+                                "kind": "preposition",
                                 "präposition": "seit",
                                 "caseRequired": "dativ",
                                 "color":"blue"
                             },
                             {
                                 "id": "prep-von",
+                                "kind": "preposition",
                                 "präposition": "von",
                                 "caseRequired": "dativ",
                                 "color":"blue"
                             },
                             {
                                 "id": "prep-zu",
+                                "kind": "preposition",
                                 "präposition": "zu",
                                 "caseRequired": "dativ",
                                 "color":"blue"
@@ -293,100 +706,148 @@
                         ],"präpositionen mit Genitiv" : [
                             {
                                 "id": "prep-anstatt",
+                                "kind": "preposition",
                                 "präposition": "anstatt",
                                 "caseRequired": "genitiv",
                                 "color":"green"
                             },
                             {
                                 "id": "prep-aufgrund",
+                                "kind": "preposition",
                                 "präposition": "aufgrund",
                                 "caseRequired": "genitiv",
                                 "color":"green"
                             },
                             {
                                 "id": "prep-trotz",
+                                "kind": "preposition",
                                 "präposition": "trotz",
                                 "caseRequired": "genitiv",
                                 "color":"green"
                             },
                             {
                                 "id": "prep-waehrend",
+                                "kind": "preposition",
                                 "präposition": "während",
                                 "caseRequired": "genitiv",
                                 "color":"green"
                             },
                              {
                                 "id": "prep-wegen",
+                                "kind": "preposition",
                                 "caseRequired": "wegen",
                                 "color":"green"
                             }
                         ], "Präpositionen mit Dativ oder Akkusativ": [
                             {
                                 "id": "prep-an",
+                                "kind": "preposition",
                                 "präposition": "an",
-                                "casePossible1": "akkusativ",
-                                "casePossible2": "dativ",
-                                "color1":"yellow",
-                                "color2": "blue"
+                                "cases": {
+                                    "akkusativ": {
+                                        "color": "yellow"
+                                    },
+                                    "dativ": {
+                                        "color": "blue"
+                                    }
+                                }
                             },{
-                                 "id": "prep-auf",
+                                "id": "prep-auf",
+                                "kind": "preposition",
                                 "präposition": "auf",
-                                "casePossible1": "akkusativ",
-                                "casePossible2": "dativ",
-                                "color1":"yellow",
-                                "color2": "blue"
+                                "cases": {
+                                    "akkusativ": {
+                                        "color": "yellow"
+                                    },
+                                    "dativ": {
+                                        "color": "blue"
+                                    }
+                                }
                             },
                             {
                                  "id": "prep-hinter",
+                                  "kind": "preposition",
                                 "präposition": "hinter",
-                                "casePossible1": "akkusativ",
-                                "casePossible2": "dativ",
-                                "color1":"yellow",
-                                "color2": "blue"
+                                "cases": {
+                                    "akkusativ": {
+                                        "color": "yellow"
+                                    },
+                                    "dativ": {
+                                        "color": "blue"
+                                    }
+                                }
                             },
                             {
                                  "id": "prep-in",
+                                  "kind": "preposition",
                                 "präposition": "in",
-                                "casePossible1": "akkusativ",
-                                "casePossible2": "dativ",
-                                "color1":"yellow",
-                                "color2": "blue"
+                                "cases": {
+                                    "akkusativ": {
+                                        "color": "yellow"
+                                    },
+                                    "dativ": {
+                                        "color": "blue"
+                                    }
+                                }
                             },
                                 {
                                  "id": "prep-wegen",
+                                  "kind": "preposition",
                                 "präposition": "neben",
-                                "casePossible1": "akkusativ",
-                                "casePossible2": "dativ",
-                                "color1":"yellow",
-                                "color2": "blue"
+                                "cases": {
+                                    "akkusativ": {
+                                        "color": "yellow"
+                                    },
+                                    "dativ": {
+                                        "color": "blue"
+                                    }
+                                }
                             },
                                 {
                                  "id": "prep-ueber",
+                                  "kind": "preposition",
                                 "präposition": "über",
-                                "casePossible1": "akkusativ",
-                                "casePossible2": "dativ",
-                                "color1":"yellow",
-                                "color2": "blue"
+                                "cases": {
+                                    "akkusativ": {
+                                        "color": "yellow"
+                                    },
+                                    "dativ": {
+                                        "color": "blue"
+                                    }
+                                }
                             },
                                 {
-                                 "id": "prep-unter",
+                                "id": "prep-unter",
+                                "kind": "preposition",
                                 "präposition": "unter",
-                                "casePossible1": "akkusativ",
-                                "casePossible2": "dativ",
-                                "color1":"yellow",
-                                "color2": "blue"
+                                    "cases": {
+                                    "akkusativ": {
+                                        "color": "yellow"
+                                    },
+                                    "dativ": {
+                                        "color": "blue"
+                                    }
+                                }
                             },
                                 {
                                  "id": "prep-vor",
-                                "präposition": "vor",
-                                "casePossible1": "akkusativ",
-                                "casePossible2": "dativ",
-                                "color1":"yellow",
-                                "color2": "blue"
+                                 "kind": "preposition",
+                                 "präposition": "vor",
+                                 "cases": {
+                                    "akkusativ": {
+                                        "color": "yellow"
+                                    },
+                                    "dativ": {
+                                        "color": "blue"
+                                    }
+                                }
                             },
+
                                 {
                                  "id": "prep-zwischen",
-                                "cases": {
+                                 "kind": "preposition",
+                                 "präposition": "zwischen",
+                                 "cases": {
                                     "akkusativ": {
                                         "color": "yellow"
                                     },
