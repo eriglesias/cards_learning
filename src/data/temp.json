@@ -600,8 +600,10 @@
                                 "color": "yellow"
                             }
                    ]                
-            }, "Präpositionen": {
-                    "Präpositionen mit Akkusativ": 
+        },
+        "Präpositionen": 
+        {
+            "Präpositionen mit Akkusativ": 
                          [
                             {
                                 "id": "prep-bis",
