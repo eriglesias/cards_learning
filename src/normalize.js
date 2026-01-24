@@ -7,3 +7,4 @@ console.log(data)
 console.log("Data type", typeof data);
 console.log("Is array?", Array.isArray(data));
 console.log("Content", data);
+
