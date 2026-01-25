@@ -1,6 +1,6 @@
 //import data from './data/temp.json' with { type: 'json'};
 import fs from 'fs';
-const data = JSON.parse(fs.readFileSync('./src/data/temp.json', 'utf8'));
+const data = JSON.parse(fs.readFileSync('./src/data/canonical.json', 'utf8'));
 console.log(data)
 
 
