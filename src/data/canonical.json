@@ -306,7 +306,7 @@
                         ]
                     },
                     {
-                        "id": "verb-erzähle",
+                        "id": "verb-erzählen",
                         "kind": "verb",
                         "verbInfinitive": "erzählen",
                         "subjectType": "personal",
