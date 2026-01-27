@@ -6,12 +6,12 @@
                             "id": "verb-antworten",
                             "kind": "verb",
                             "verbInfinitive": "antworten",
-                            "subjectType": "personal",
+                            "subjectRole": "agent",
                             "arguments": [
                                 {
                                     "role": "object",
-                                    "case": "dativ",
-                                    "example": "dir"
+                                    "case": "dativ"
+                                    
                                 }
                             ]
                         },
@@ -19,12 +19,11 @@
                             "id": "verb-applaudieren",
                             "kind": "verb",
                             "verbInfinitive": "applaudieren",
-                            "subjectType": "personal",
+                            "subjectRole": "agent",
                             "arguments": [
                                 {
                                     "role": "object",
-                                    "case": "dativ",
-                                    "example": "dir"
+                                    "case": "dativ"
                                 }
                             ]
                          
@@ -33,12 +32,12 @@
                             "id": "verb-begegnen",
                             "kind": "verb",
                             "verbInfinitive": "begegnen",
-                            "subjectType": "personal",
+                            "subjectRole": "agent",
                             "arguments": [
                                 {
                                     "role": "object",
-                                    "case": "dativ",
-                                    "example": "dir"
+                                    "case": "dativ"
+                                    
                                 }
                             ]
                          
@@ -47,12 +46,11 @@
                             "id": "verb-beistehen",
                             "kind": "verb",
                             "verbInfinitive": "beistehen",
-                            "subjectType": "personal",
+                            "subjectRole": "agent",
                             "arguments": [
                                 {
                                     "role": "object",
-                                    "case": "dativ",
-                                    "example": "dir"
+                                    "case": "dativ"
                                 }
                             ]
                         },
@@ -60,12 +58,11 @@
                             "id": "verb-danken",
                             "kind": "verb",
                             "verbInfinitive": "danken",
-                            "subjectType": "personal",
+                            "subjectRole": "agent",
                             "arguments": [
                                 {
                                     "role": "object",
-                                    "case": "dativ",
-                                    "example": "dir"
+                                    "case": "dativ"
                                 }
                             ]
                             
@@ -73,13 +70,12 @@
                         {
                             "id": "verb-fehlen",
                             "kind": "verb",
-                            "subjectType": "impersonal",
+                            "subjectRole": "expletive",
                             "verbInfinitive": "fehlen",
                             "arguments": [
                                 {
                                     "role": "object",
-                                    "case": "dativ",
-                                    "example": "dir"
+                                    "case": "dativ"
                                 }
                             ]
                        
@@ -87,66 +83,61 @@
                         {
                             "id": "verb-gefallen",
                             "kind": "verb",
-                            "subjectType": "impersonal",
+                            "subjectRole": "expletive",
                             "verbInfinitive": "gefallen",
                             "arguments": [
                                     {
                                         "role": "object",
-                                        "case": "dativ",
-                                        "example": "dir"
+                                        "case": "dativ"
                                     }
                                 ]
                         },
                         {
                             "id": "verb-gelingen",
                             "kind": "verb",
-                            "subjectType": "impersonal",
+                            "subjectRole": "expletive",
                             "verbInfinitive": "gelingen",
                             "arguments": [
                                 {
                                     "role": "object",
-                                    "case": "dativ",
-                                    "example": "dir"
+                                    "case": "dativ"
                                 }
                             ]
                       
                         },
                         {
-                            "id": "verb-gegenueber",
+                            "id": "verb-genuegen",
                             "kind": "verb",
-                            "subjectType": "impersonal",
-                            "verbInfinitive": "gegenüber",
+                            "subjectRole": "expletive",
+                            "verbInfinitive": "genügen",
                             "arguments": [
                                     {
                                         "role": "object",
-                                        "case": "dativ",
-                                        "example": "dir"
+                                        "case": "dativ"
                                     }
                                 ]  
                         },
                         {
                             "id": "verb-misslingen",
                             "kind": "verb",
-                            "subjectType": "impersonal",
+                            "subjectRole": "expletive",
                             "verbInfinitive": "misslingen",
                             "arguments": [
                                     {
                                         "role": "object",
-                                        "case": "dativ",
-                                        "example": "dir"
+                                        "case": "dativ"
                                     }
                                 ]
                         },
                         {
                             "id": "verb-nuetzen",
                             "kind": "verb",
-                            "subjectType": "impersonal",
+                            "subjectRole": "agent",
                             "verbInfinitive": "nützen",
                             "arguments": [
                                 {
                                     "role": "object",
-                                    "case": "dativ",
-                                    "example": "dir"
+                                    "case": "dativ"
                                 }
                             ]
                       
@@ -154,13 +145,12 @@
                         {
                             "id": "verb-passieren",
                             "kind": "verb",
-                            "subjectType": "impersonal",
+                            "subjectRole": "expletive",
                             "verbInfinitive": "passieren",
                             "arguments": [
                                 {
                                     "role": "object",
-                                    "case": "dativ",
-                                    "example": "dir"
+                                    "case": "dativ"
                                 }
                             ]
                         
@@ -168,26 +158,24 @@
                         {
                             "id": "verb-schaden",
                             "kind": "verb",
-                            "subjectType": "impersonal",
+                            "subjectRole": "agent",
                             "verbInfinitive": "schaden",
                             "arguments": [
                                     {
                                         "role": "object",
-                                        "case": "dativ",
-                                        "example": "dir"
+                                        "case": "dativ"
                                     }
                                 ]
                         },
                         {
                             "id": "verb-schmecken",
                             "kind": "verb",
-                            "subjectType": "impersonal",
+                            "subjectRole": "expletive",
                             "verbInfinitive": "schmecken",
                             "arguments": [
                                 {
                                     "role": "object",
-                                    "case": "dativ",
-                                    "example": "dir"
+                                    "case": "dativ"
                                 }
                             ]
                         },
@@ -195,16 +183,14 @@
                             "id": "verb-anbieten",
                             "kind": "verb",
                             "verbInfinitive": "anbieten",
-                            "subjectType": "personal",
+                            "subjectRole": "agent",
                             "arguments": [
                                 {"role": "indirectObject",
-                                "case": "dativ",
-                                "example": "dir"
+                                "case": "dativ"
                             },
                             {
                                 "role": "directObject",
-                                "case": "akkusativ",
-                                "example": "etwas"
+                                "case": "akkusativ"
                             }
                          ]
                         },
@@ -212,387 +198,310 @@
                             "id": "verb-beantworten",
                             "kind": "verb",
                             "verbInfinitive": "beantworten",
-                            "subjectType": "personal",
+                           "subjectRole": "agent",
                             "arguments": [
-                                {
-                                "indirectObject": {
-                                    "case": "dativ",
-                                    "color": "blue",
-                                    "example": "dir"
-                                },
-                                "directObjekt": {
-                                    "case": "akkusativ",
-                                    "color": "yellow",
-                                    "example": "etwas"
-                              }
+                                {"role": "indirectObject",
+                                "case": "dativ"
+                            },
+                            {
+                                "role": "directObject",
+                                "case": "akkusativ"
                             }
-                          ]
+                         ]
                         },
                         {
                         "id": "verb-befehlen",
                         "kind": "verb",
                         "verbInfinitive": "befehlen",
-                        "subjectType": "personal",
+                        "subjectRole": "agent",
                         "arguments": [
-                            {
-                            "indirectObject": {
-                                "case": "dativ",
-                                "color": "blue",
-                                "example": "dir"
+                                {"role": "indirectObject",
+                                "case": "dativ"
                             },
-                            "directObjekt": {
-                                "case": "akkusativ",
-                                "color": "yellow",
-                                "example": "etwas"
+                            {
+                                "role": "directObject",
+                                "case": "akkusativ"
                             }
-                         }
-                        ]
+                         ]
                     },  
                     {
                         "id": "verb-bringen",
                             "kind": "verb",
                             "verbInfinitive": "bringen",
-                            "subjectType": "personal",
-                            "arguments": [ {
-                                "indirectObject": {
-                                    "case": "dativ",
-                                    "color": "blue",
-                                    "example": "dir"
-                                },
-                                "directObjekt": {
-                                    "case": "akkusativ",
-                                    "color": "yellow",
-                                    "example": "etwas"
-                                }
+                           "subjectRole": "agent",
+                            "arguments": [
+                                {"role": "indirectObject",
+                                "case": "dativ"
+                            },
+                            {
+                                "role": "directObject",
+                                "case": "akkusativ"
                             }
-                        ]
+                         ]
                     },
                  {
                         "id": "verb-empfehlen",
                         "kind": "verb",
                         "verbInfinitive": "empfehlen",
-                        "subjectType": "personal",
-                        "arguments": [{
-                            "indirectObject": {
-                                "case": "dativ",
-                                "color": "blue",
-                                "example": "dir"
+                        "subjectRole": "agent",
+                        "arguments": [
+                                {"role": "indirectObject",
+                                "case": "dativ"
                             },
-                            "directObjekt": {
-                                "case": "akkusativ",
-                                "color": "yellow",
-                                "example": "etwas"
+                            {
+                                "role": "directObject",
+                                "case": "akkusativ"
                             }
-                        }
-                    ]
+                         ]
                     },
                     {
                         "id": "verb-erklären",
                         "kind": "verb",
                         "verbInfinitive": "erklären",
-                        "subjectType": "personal",
-                        "arguments": [ {
-                            "indirectObject": {
-                                "case": "dativ",
-                                "color": "blue",
-                                "example": "dir"
+                        "subjectRole": "agent",
+                        "arguments": [
+                                {"role": "indirectObject",
+                                "case": "dativ"
                             },
-                            "directObjekt": {
-                                "case": "akkusativ",
-                                "color": "yellow",
-                                "example": "etwas"
+                            {
+                                "role": "directObject",
+                                "case": "akkusativ"
                             }
-                        } 
-                        ]
+                         ]
                     },
                     {
                         "id": "verb-erzählen",
                         "kind": "verb",
                         "verbInfinitive": "erzählen",
-                        "subjectType": "personal",
-                        "arguments": [ {
-                            "indirectObject": {
-                                "case": "dativ",
-                                "color": "blue",
-                                "example": "dir"
+                        "subjectRole": "agent",
+                        "arguments": [
+                                {"role": "indirectObject",
+                                "case": "dativ"
                             },
-                            "directObjekt": {
-                                "case": "akkusativ",
-                                "color": "yellow",
-                                "example": "etwas"
+                            {
+                                "role": "directObject",
+                                "case": "akkusativ"
                             }
-                        }
-                      ]
+                         ]
                     },
                     {
                         "id": "verb-geben",
                         "kind": "verb",
                         "verbInfinitive": "geben",
-                        "subjectType": "personal",
-                        "arguments": [ {
-                            "indirectObject": {
-                                "case": "dativ",
-                                "color": "blue",
-                                "example": "dir"
+                        "subjectRole": "agent",
+                        "arguments": [
+                                {"role": "indirectObject",
+                                "case": "dativ"
                             },
-                            "directObjekt": {
-                                "case": "akkusativ",
-                                "color": "yellow",
-                                "example": "etwas"
+                            {
+                                "role": "directObject",
+                                "case": "akkusativ"
                             }
-                        }
-                    ]
+                         ]
                     },
                     {
                         "id": "verb-glauben",
                         "kind": "verb",
                         "verbInfinitive": "glauben",
-                        "subjectType": "personal",
-                        "arguments": [ {
-                            "indirectObject": {
-                                "case": "dativ",
-                                "color": "blue",
-                                "example": "dir"
+                        "subjectRole": "agent",
+                       "arguments": [
+                                {"role": "indirectObject",
+                                "case": "dativ"
                             },
-                            "directObjekt": {
-                                "case": "akkusativ",
-                                "color": "yellow",
-                                "example": "etwas"
+                            {
+                                "role": "directObject",
+                                "case": "akkusativ"
                             }
-                        }   
-                      ]           
+                         ]       
                     }, 
                     {
                         "id": "verb-leihen",
                         "kind": "verb",
                         "verbInfinitive": "leihen",
-                        "subjectType": "personal",
-                        "arguments": [ {
-                            "indirectObject": {
-                                "case": "dativ",
-                                "color": "blue",
-                                "example": "dir"
+                        "subjectRole": "agent",
+                       "arguments": [
+                                {"role": "indirectObject",
+                                "case": "dativ"
                             },
-                            "directObjekt": {
-                                "case": "akkusativ",
-                                "color": "yellow",
-                                "example": "etwas"
+                            {
+                                "role": "directObject",
+                                "case": "akkusativ"
                             }
-                        }
-                      ]
+                         ]  
                     },
                     {
                         "id": "verb-lieferen",
                         "verbInfinitive": "liefern",
-                        "subjectType": "personal",
+                        "subjectRole": "agent",
                         "kind": "verb",
-                        "arguments": [ {
-                            "indirectObject": {
-                                "case": "dativ",
-                                "color": "blue",
-                                "example": "dir"
+                        "arguments": [
+                                {"role": "indirectObject",
+                                "case": "dativ"
                             },
-                            "directObjekt": {
-                                "case": "akkusativ",
-                                "color": "yellow",
-                                "example": "etwas"
+                            {
+                                "role": "directObject",
+                                "case": "akkusativ"
                             }
-                        } 
-                    ]
+                         ]   
                     },
                     {
                         "id": "verb-nehmen",
                         "verbInfinitive": "nehmen",
-                        "subjectType": "personal",
+                        "subjectRole": "agent",
                         "kind": "verb",
-                        "arguments": [{
-                            "indirectObject": {
-                                "case": "dativ",
-                                "color": "blue",
-                                "example": "dir"
+                        "arguments": [
+                                {"role": "indirectObject",
+                                "case": "dativ"
                             },
-                            "directObjekt": {
-                                "case": "akkusativ",
-                                "color": "yellow",
-                                "example": "etwas"
+                            {
+                                "role": "directObject",
+                                "case": "akkusativ"
                             }
-                        }
-                    ]
+                         ]  
                     },
                     {
                         "id": "verb-sagen",
                         "verbInfinitive": "sagen",
-                        "subjectType": "personal",
+                        "subjectRole": "agent",
                         "kind": "verb",
-                        "arguments": [{
-                            "indirectObject": {
-                                "case": "dativ",
-                                "color": "blue",
-                                "example": "dir"
+                        "arguments": [
+                                {"role": "indirectObject",
+                                "case": "dativ"
                             },
-                            "directObjekt": {
-                                "case": "akkusativ",
-                                "color": "yellow",
-                                "example": "etwas"
+                            {
+                                "role": "directObject",
+                                "case": "akkusativ"
                             }
-                        }
-                    ]
+                         ] 
                     },
                     {
                         "id": "verb-schenken",
                         "verbInfinitive": "schenken",
-                        "subjectType": "personal",
+                        "subjectRole": "agent",
                         "kind": "verb",
-                        "arguments": [{
-                            "indirectObject": {
-                                "case": "dativ",
-                                "color": "blue",
-                                "example": "dir"
+                       "arguments": [
+                                {"role": "indirectObject",
+                                "case": "dativ"
                             },
-                            "directObjekt": {
-                                "case": "akkusativ",
-                                "color": "yellow",
-                                "example": "etwas"
+                            {
+                                "role": "directObject",
+                                "case": "akkusativ"
                             }
-                        } 
-                    ]
+                         ] 
                     },
                     {
                         "id": "verb-schicken",
                         "verbInfinitive": "schicken",
-                        "subjectType": "personal",
+                        "subjectRole": "agent",
                         "kind": "verb",
-                        "arguments":[ {
-                            "indirectObject": {
-                                "case": "dativ",
-                                "color": "blue",
-                                "example": "dir"
+                        "arguments": [
+                                {"role": "indirectObject",
+                                "case": "dativ"
                             },
-                            "directObjekt": {
-                                "case": "akkusativ",
-                                "color": "yellow",
-                                "example": "etwas"
+                            {
+                                "role": "directObject",
+                                "case": "akkusativ"
                             }
-                        }
-                    ]
+                         ] 
                     },
                     {
                         "id": "verb-schreiben",
                         "verbInfinitive": "schreiben",
-                        "subjectType": "personal",
+                        "subjectRole": "agent",
                         "kind": "verb",
-                        "arguments": [{
-                            "indirectObject": {
-                                "case": "dativ",
-                                "color": "blue",
-                                "example": "dir"
+                       "arguments": [
+                                {"role": "indirectObject",
+                                "case": "dativ"
                             },
-                            "directObjekt": {
-                                "case": "akkusativ",
-                                "color": "yellow",
-                                "example": "etwas"
+                            {
+                                "role": "directObject",
+                                "case": "akkusativ"
                             }
-                        } 
-                    ] 
+                         ]   
                     },
                     {
                         "id": "verb-senden",
                         "verbInfinitive": "senden",
-                        "subjectType": "personal",
+                        "subjectRole": "agent",
                         "kind": "verb",
-                        "arguments": [{
-                            "indirectObject": {
-                                "case": "dativ",
-                                "color": "blue",
-                                "example": "dir"
+                         "arguments": [
+                                {"role": "indirectObject",
+                                "case": "dativ"
                             },
-                            "directObjekt": {
-                                "case": "akkusativ",
-                                "color": "yellow",
-                                "example": "etwas"
+                            {
+                                "role": "directObject",
+                                "case": "akkusativ"
                             }
-                        } ]
+                         ]    
                     },
                     {
                         "id": "verb-stehlen",
                         "verbInfinitive": "stehlen",
-                        "subjectType": "personal",
+                        "subjectRole": "agent",
                         "kind": "verb",
-                        "arguments": [{
-                            "indirectObject": {
-                                "case": "dativ",
-                                "color": "blue",
-                                "example": "dir"
+                       "arguments": [
+                                {"role": "indirectObject",
+                                "case": "dativ"
                             },
-                            "directObjekt": {
-                                "case": "akkusativ",
-                                "color": "yellow",
-                                "example": "etwas"
+                            {
+                                "role": "directObject",
+                                "case": "akkusativ"
                             }
-                        }]
+                         ]   
                     },
                     {
                         "id": "verb-verbieten",
                         "verbInfinitive": "verbieten",
-                        "subjectType": "personal",
+                        "subjectRole": "agent",
                         "kind": "verb",
-                        "arguments":[ {
-                            "indirectObject": {
-                                "case": "dativ",
-                                "color": "blue",
-                                "example": "dir"
+                        "arguments": [
+                                {"role": "indirectObject",
+                                "case": "dativ"
                             },
-                            "directObjekt": {
-                                "case": "akkusativ",
-                                "color": "yellow",
-                                "example": "etwas"
+                            {
+                                "role": "directObject",
+                                "case": "akkusativ"
                             }
-                        } ]
+                         ]   
                     },
                     {
                         "id": "verb-versprechen",
                         "verbInfinitive": "versprechen",
-                        "subjectType": "personal",
+                        "subjectRole": "agent",
                         "kind": "verb",
-                        "arguments": [{
-                            "indirectObject": {
-                                "case": "dativ",
-                                "color": "blue",
-                                "example": "dir"
+                         "arguments": [
+                                {"role": "indirectObject",
+                                "case": "dativ"
                             },
-                            "directObjekt": {
-                                "case": "akkusativ",
-                                "color": "yellow",
-                                "example": "etwas"
+                            {
+                                "role": "directObject",
+                                "case": "akkusativ"
                             }
-                        }]
+                         ]
                     },
                     {
                         "id": "verb-zeigen",
                         "verbInfinitive": "zeigen",
-                        "subjectType": "personal",
+                        "subjectRole": "agent",
                         "kind": "verb",
-                        "arguments":[ {
-                            "indirectObject": {
-                                "case": "dativ",
-                                "color": "blue",
-                                "example": "dir"
+                        "arguments": [
+                                {"role": "indirectObject",
+                                "case": "dativ"
                             },
-                            "directObjekt": {
-                                "case": "akkusativ",
-                                "color": "yellow",
-                                "example": "etwas"
+                            {
+                                "role": "directObject",
+                                "case": "akkusativ"
                             }
-                            } ]
+                         ]  
                         },
                          {
                                 "id": "verb-abhaengen",
+                                "subjectRole": "agent",
                                 "verbInfinitive": "abhängen",
                                 "kind": "verb",
-                                "caseRequired":"dativ",
                                 "arguments": [
                                     {
-                                        "role": "prepositional_objekt",
+                                        "role": "prepositionalObject",
                                         "preposition": "von",
                                         "case": "dativ"
                                     }
@@ -600,11 +509,12 @@
                             },
                             {
                                 "id": "verb-abraten",
+                                "subjectRole": "agent",
                                 "kind": "verb",
                                 "verbInfinitive": "abraten",
                                 "arguments": [
                                     {
-                                        "role": "prepositional_objekt",
+                                        "role": "prepositionalObject",
                                         "preposition": "von",
                                         "case": "dativ"
                                     }
@@ -612,11 +522,12 @@
                             },
                             {
                                 "id": "verb-achten",
+                                "subjectRole": "agent",
                                 "kind": "verb",
                                 "verbInfinitive": "achten / Acht geben",
                                 "arguments": [
                                     {
-                                        "role": "prepositional_objekt",
+                                        "role": "prepositionalObject",
                                         "preposition": "auf",
                                         "case": "akkusativ"
                                     }
@@ -624,22 +535,24 @@
                             },
                             {
                                 "id": "verb-anfangen",
+                                "subjectRole": "agent",
                                 "kind": "verb",
                                 "verbInfinitive": "anfangen",
                                 "arguments": [
                                     {
-                                        "role": "prepositional_objekt",
+                                        "role": "prepositionalObject",
                                         "preposition": "mit",
                                         "case": "dativ"
                                     }
                                 ]
                             }, {
                                 "id": "verb-sich-anmelden",
+                                "subjectRole": "agent",
                                 "kind": "verb",
                                 "verbInfinitive": "sich anmelden",
                                 "arguments": [
                                     {
-                                        "role": "prepositional_objekt",
+                                        "role": "prepositionalObject",
                                         "preposition": "für",
                                         "case": "akkusativ"
                                     }
@@ -652,244 +565,181 @@
                              {
                                 "id": "prep-bis",
                                 "kind": "preposition",
-                                "präposition": "bis",
-                                "caseRequired": "akkusativ"
+                                "preposition": "bis",
+                                "allowedCases": ["akkusativ"]
                                 
                             },
                             {
                                 "id": "prep-durch",
                                 "kind": "preposition",
-                                "präposition": "durch",
-                                "caseRequired": "akkusativ"
+                                "preposition": "durch",
+                                "allowedCases": ["akkusativ"]
                                 
                             },
                             {
                                 "id": "prep-fuer",
                                 "kind": "preposition",
-                                "präposition": "für",
-                                "caseRequired": "akkusativ"
+                                "preposition": "für",
+                                "allowedCases": ["akkusativ"]
                                 
                             },
                             {
                                 "id": "prep-gegen",
                                  "kind": "preposition",
-                                "präposition": "gegen",
-                                "caseRequired": "akkusativ"
+                                "preposition": "gegen",
+                                "allowedCases": ["akkusativ"]
                                 
                             },
                             {
                                 "id": "prep-ohne",
                                 "kind": "preposition",
-                                "präposition": "ohne",
-                                "caseRequired": "akkusativ"
+                                "preposition": "ohne",
+                                "allowedCases": ["akkusativ"]
                                 
                             },
                             {
                                 "id": "prep-um",
                                 "kind": "preposition",
-                                "präposition": "um",
-                                "caseRequired": "akkusativ"
+                                "preposition": "um",
+                                "allowedCases": ["akkusativ"]
                                 
                             },
                             {
                                 "id": "prep-aus",
                                 "kind": "preposition",
-                                "präposition": "aus",
-                                "caseRequired": "dativ"
+                                "preposition": "aus",
+                                "allowedCases": ["dativ"]
                                 
                             },
                             {
                                 "id": "prep-bei",
                                 "kind": "preposition",
-                                "präposition": "bei",
-                                "caseRequired": "dativ"
+                                "preposition": "bei",
+                                "allowedCases": ["dativ"]
                                 
                             },
                             {
                                 "id": "prep-gegenueber",
                                 "kind": "preposition",
-                                "präposition": "gegenüber",
-                                "caseRequired": "dativ"
+                                "preposition": "gegenüber",
+                                "allowedCases": ["dativ"]
                                 
                             },
                             {
                                 "id": "prep-mit",
                                 "kind": "preposition",
-                                "präposition": "mit",
-                                "caseRequired": "dativ"
+                                "preposition": "mit",
+                                "allowedCases": ["dativ"]
                                 
                             },
                             {
                                 "id": "prep-nach",
                                 "kind": "preposition",
-                                "präposition": "nach",
-                                "caseRequired": "dativ"
+                                "preposition": "nach",
+                                "allowedCases": ["dativ"]
                                 
                             },
                             {
                                 "id": "prep-seit",
                                 "kind": "preposition",
-                                "präposition": "seit",
-                                "caseRequired": "dativ"
+                                "preposition": "seit",
+                                "allowedCases": ["dativ"]
                                 
                             },
                             {
                                 "id": "prep-von",
                                 "kind": "preposition",
-                                "präposition": "von",
-                                "caseRequired": "dativ"
+                                "preposition": "von",
+                                "allowedCases": ["dativ"]
                                 
                             },
                             {
                                 "id": "prep-zu",
                                 "kind": "preposition",
-                                "präposition": "zu",
-                                "caseRequired": "dativ"
+                                "preposition": "zu",
+                                "allowedCases": ["dativ"]
                                 
                             },
                              {
                                 "id": "prep-anstatt",
                                 "kind": "preposition",
-                                "präposition": "anstatt",
-                                "caseRequired": "genitiv"
+                                "preposition": "anstatt",
+                                "allowedCases": ["genitiv"]
                                 
                             },
                             {
                                 "id": "prep-aufgrund",
                                 "kind": "preposition",
-                                "präposition": "aufgrund",
-                                "caseRequired": "genitiv"
+                                "preposition": "aufgrund",
+                                "allowedCases": ["genitiv"]
                                 
                             },
                             {
                                 "id": "prep-trotz",
                                 "kind": "preposition",
-                                "präposition": "trotz",
-                                "caseRequired": "genitiv"
+                                "preposition": "trotz",
+                                "allowedCases": ["genitiv"]
                                 
                             },
                             {
                                 "id": "prep-waehrend",
                                 "kind": "preposition",
-                                "präposition": "während",
-                                "caseRequired": "genitiv"
+                                "preposition": "während",
+                                 "allowedCases": ["genitiv"] 
+                            },
+                            {
                                 
+                                "id": "prep-wegen",
+                                "kind": "preposition",
+                                "preposition": "wegen",
+                                "allowedCases": ["genitiv"]
                             },
                             {
                             "id": "prep-an",
                             "kind": "preposition",
-                            "präposition": "an",
-                            "cases": {
-                                "akkusativ": {
-                                    "color": "yellow"
-                                },
-                                "dativ": {
-                                    "color": "blue"
-                                }
-                             }
+                            "preposition": "an",
+                            "allowedCases": ["akkusativ", "dativ"]
                             },{
                                 "id": "prep-auf",
                                 "kind": "preposition",
-                                "präposition": "auf",
-                                "cases": {
-                                    "akkusativ": {
-                                        "color": "yellow"
-                                    },
-                                    "dativ": {
-                                        "color": "blue"
-                                    }
-                                }
+                                "preposition": "auf",
+                                "allowedCases": ["akkusativ", "dativ"]
                             },
                             {
                                  "id": "prep-hinter",
                                   "kind": "preposition",
-                                "präposition": "hinter",
-                                "cases": {
-                                    "akkusativ": {
-                                        "color": "yellow"
-                                    },
-                                    "dativ": {
-                                        "color": "blue"
-                                    }
-                                }
+                                "preposition": "hinter",
+                                 "allowedCases": ["akkusativ", "dativ"]
                             },
                             {
                                  "id": "prep-in",
                                   "kind": "preposition",
-                                "präposition": "in",
-                                "cases": {
-                                    "akkusativ": {
-                                        "color": "yellow"
-                                    },
-                                    "dativ": {
-                                        "color": "blue"
-                                    }
-                                }
+                                "preposition": "in",
+                                 "allowedCases": ["akkusativ", "dativ"]
                             },
-                                {
-                                 "id": "prep-wegen",
-                                  "kind": "preposition",
-                                "präposition": "neben",
-                                "cases": {
-                                    "akkusativ": {
-                                        "color": "yellow"
-                                    },
-                                    "dativ": {
-                                        "color": "blue"
-                                    }
-                                }
-                            },
-                                {
+                            {
                                  "id": "prep-ueber",
                                   "kind": "preposition",
-                                "präposition": "über",
-                                "cases": {
-                                    "akkusativ": {
-                                        "color": "yellow"
-                                    },
-                                    "dativ": {
-                                        "color": "blue"
-                                    }
-                                }
+                                "preposition": "über",
+                                 "allowedCases": ["akkusativ", "dativ"]
                             },
                                 {
                                 "id": "prep-unter",
                                 "kind": "preposition",
-                                "präposition": "unter",
-                                    "cases": {
-                                    "akkusativ": {
-                                        "color": "yellow"
-                                    },
-                                    "dativ": {
-                                        "color": "blue"
-                                    }
-                                }
+                                "preposition": "unter",
+                                "allowedCases": ["akkusativ", "dativ"]
                             },
                                 {
                                  "id": "prep-vor",
                                  "kind": "preposition",
-                                 "präposition": "vor",
-                                 "cases": {
-                                    "akkusativ": {
-                                        "color": "yellow"
-                                    },
-                                    "dativ": {
-                                        "color": "blue"
-                                    }
-                                }
+                                 "preposition": "vor",
+                                  "allowedCases": ["akkusativ", "dativ"]
                             },
                                 {
                                  "id": "prep-zwischen",
                                  "kind": "preposition",
-                                 "präposition": "zwischen",
-                                 "cases": {
-                                    "akkusativ": {
-                                        "color": "yellow"
-                                    },
-                                    "dativ": {
-                                        "color": "blue"
-                                    }
-                                }
+                                 "preposition": "zwischen",
+                                  "allowedCases": ["akkusativ", "dativ"]
                             }
                         ]   
               }        
