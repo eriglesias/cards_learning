@@ -21,8 +21,6 @@ map.delete("b");
 console.log(map.size)
 
 /* 
-Array.prototype.forEach
-Array.prototype.map
 Array.prototype.filter
 Array.prototype.reduce 
 */
@@ -57,5 +55,17 @@ for (const [key, value] of Object.entries(data)){
 
 /* == Array Prototype test ** */
 
-data.forEach((element) => console.log(element));
+data.cards.verben.eintraege.forEach((element) => console.log(element));
 
+console.log(data);
+console.log(data.cards)
+console.log(data.cards.verben)
+console.log(data.cards.verben.eintraege)
+
+const eintraege = data.cards.verben.eintraege
+const filterTest = eintraege.filter((verb) => verb.subjectRole == 'agent');
+console.log(filterTest)
+
+const dativVerbs = eintraege.filter((verb) => verb.arguments.case == 'dativ');
+const argu= eintraege.arguments;
+console.log(argu)
