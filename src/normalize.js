@@ -66,6 +66,34 @@ const eintraege = data.cards.verben.eintraege
 const filterTest = eintraege.filter((verb) => verb.subjectRole == 'agent');
 console.log(filterTest)
 
-const dativVerbs = eintraege.filter((verb) => verb.arguments.case == 'dativ');
-const argu= eintraege.arguments;
-console.log(argu)
+//const dativVerbs = eintraege.filter((verb) => verb.arguments.some(arg => arg.case === 'dativ'));
+//console.log(dativVerbs);
+
+/* == Normalization test == */
+
+// keys = cases
+// values = list of verb IDs
+// uniqueness
+
+console.log(eintraege[0].id)
+console.log(eintraege[0].arguments[0].case)
+const  verbsByCase = new Object();
+const dativVerbs = new Set();
+const accusativeVerbs = new Set();
+const genitiveVerbs = new Set();
+
+for (const element of eintraege) {
+    for (const argument of element.arguments) {
+        if (argument.case == 'dativ') {
+            dativVerbs.add(element.id)
+        }
+        else if (argument.case == 'akkusativ') {
+            accusativeVerbs.add(element.id)
+        }
+        else {
+            genitiveVerbs.add(element.id)
+        }
+    }
+}
+
+console.log(dativVerbs)
