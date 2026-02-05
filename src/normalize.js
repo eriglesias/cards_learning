@@ -53,7 +53,7 @@ for (const [key, value] of Object.entries(data)){
     console.log(key,value)
 }
 
-/* == Array Prototype test ** */
+/* == Array Prototype test == ** */
 
 data.cards.verben.eintraege.forEach((element) => console.log(element));
 
@@ -77,23 +77,26 @@ console.log(filterTest)
 
 console.log(eintraege[0].id)
 console.log(eintraege[0].arguments[0].case)
-const  verbsByCase = new Object();
-const dativVerbs = new Set();
-const accusativeVerbs = new Set();
-const genitiveVerbs = new Set();
+const  verbsByCase = {
+     dativ : new Set(),
+     akkusativ : new Set(),
+     genitiv: new Set()
+};
+
 
 for (const element of eintraege) {
     for (const argument of element.arguments) {
         if (argument.case == 'dativ') {
-            dativVerbs.add(element.id)
+            verbsByCase.dativ.add(element.id)
         }
         else if (argument.case == 'akkusativ') {
-            accusativeVerbs.add(element.id)
+             verbsByCase.akkusativ.add(element.id)
         }
-        else {
-            genitiveVerbs.add(element.id)
+        else if (argument.case == 'genitive') {
+             verbsByCase.genitiv.add(element.id)
         }
     }
 }
 
-console.log(dativVerbs)
+
+console.log(verbsByCase);
