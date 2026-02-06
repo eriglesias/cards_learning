@@ -1,17 +1,14 @@
 
 <script setup>
-    //import cards from '../data/cards_info.json';
-    import data from '../data/temp.json';
+
+    import {verbsById} from '../normalize.js';
+    //import normalizedData from '../normalize.js';
     import CardTitle from './card-title.vue';
     import SentenceTemplate from './sentence-template.vue';
     import Answer from './answer.vue';
     import { ref } from 'vue';
 
-    const persoenlich = data.cards.Verben.verben_mit_dativobjekt.persoenliches_subjekt;
-    const unpersoenlich = data.cards.Verben.verben_mit_dativobjekt.unpersoenliches_subjekt;
-    const allVerbs = [...persoenlich, ...unpersoenlich];
-    const ok = ref(true);
-
+  
     function buildSentenceTemplate(inf) {
         let stem = inf.replace(/en$/, '').replace(/n$/, '')
         return `Ich ${stem}e [?]`
@@ -26,7 +23,7 @@
 </script>
 
 <template>
-    <template v-for="card in allVerbs"
+    <template v-for="card in verbsById"
         :key="card.id"
     >
         <template v-if="ok">

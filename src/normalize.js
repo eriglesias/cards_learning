@@ -1,6 +1,8 @@
-//import data from './data/temp.json' with { type: 'json'};
-import fs from 'fs';
-const data = JSON.parse(fs.readFileSync('./src/data/canonical.json', 'utf8'));
+//import data from './data/temp.json' with { type: 'json'}; -- Quokka error free version
+//import fs from 'fs';
+//const data = JSON.parse(fs.readFileSync('./src/data/canonical.json', 'utf8'));
+import { normalize } from 'path';
+import data from './data/canonical.json' with { type: 'json'}
 console.log(data)
 console.log("Data type", typeof data);
 console.log("Is array?", Array.isArray(data));
@@ -77,11 +79,14 @@ console.log(filterTest)
 
 console.log(eintraege[0].id)
 console.log(eintraege[0].arguments[0].case)
+
 const  verbsByCase = {
      dativ : new Set(),
      akkusativ : new Set(),
      genitiv: new Set()
 };
+
+const verbsById = { }
 
 
 for (const element of eintraege) {
@@ -99,4 +104,12 @@ for (const element of eintraege) {
 }
 
 
+for (const element of eintraege) {
+    //console.log(element)
+    verbsById[element.id] = element;
+}
+
 console.log(verbsByCase);
+console.log(verbsById)
+
+export {verbsById};
