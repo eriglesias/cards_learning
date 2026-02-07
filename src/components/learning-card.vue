@@ -1,13 +1,12 @@
 
 <script setup>
 
-    import {verbsById} from '../normalize.js';
-    //import normalizedData from '../normalize.js';
+    import normalized from '../normalize';
     import CardTitle from './card-title.vue';
     import SentenceTemplate from './sentence-template.vue';
     import Answer from './answer.vue';
     import { ref } from 'vue';
-
+    const ok = ref(true);
   
     function buildSentenceTemplate(inf) {
         let stem = inf.replace(/en$/, '').replace(/n$/, '')
@@ -23,15 +22,16 @@
 </script>
 
 <template>
-    <template v-for="card in verbsById"
+    <!--<template v-for="card in normalized.verbsById.verbInfinitive" -->
+    <template v-for="card in Object.values(normalized.verbsById)"
         :key="card.id"
     >
         <template v-if="ok">
             <div id="op_1">
                 <!--<CardTitle :card-title="card.verbInfinitive"/>-->
                 <CardTitle :card-title="card.verbInfinitive"/>
-                <!--<SentenceTemplate :sentence-template="buildSentenceTemplate(card.verbInfinitive)"/>-->
-                <SentenceTemplate :sentence-template="card.sentenceTemplate"/>
+                <SentenceTemplate :sentence-template="buildSentenceTemplate(card.verbInfinitive)"/>
+                <!--<SentenceTemplate :sentence-template="card.sentenceTemplate"/> -->
             </div>
         </template>
     <template v-else>
