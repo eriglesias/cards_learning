@@ -8,7 +8,15 @@ import SelectMode from './views/learn-by.vue'
 <template>
   <div>
   <!--<LearningCard />-->
-  <SelectMode/>
+  <!--<SelectMode/>-->
+  <p><strong>Current route path:</strong> {{  $route.fullPath }}</p>
+  <nav>
+    <RouterLink to="/">Go to Home</RouterLink>
+    <RouterLink to="/select">Go to Select Learning Case</RouterLink>
+  </nav>
+  <main>
+    <RouterView />
+  </main>
   </div>
 </template>
 

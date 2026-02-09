@@ -34,6 +34,11 @@
         const randomIndex = Math.floor(Math.random() * values.length);
         return values[randomIndex]; 
     }
+
+    /*  TODO:
+        read case from route
+        ask normalized data: give me the verbs for this case
+    */
     
 </script>
 
@@ -86,3 +91,5 @@
     }
 
 </style>
+
+
