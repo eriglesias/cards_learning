@@ -6,8 +6,14 @@
     import SentenceTemplate from './sentence-template.vue';
     import Answer from './answer.vue';
     import { ref } from 'vue';
+    import { useRoute } from 'vue-router';
+
     const ok = ref(true);
-  
+    const route = useRoute();
+    console.log(route.params);
+    console.log(route.params.case);
+    console.log(route.query);
+    
     function buildSentenceTemplate(inf) {
         let stem = inf.replace(/en$/, '').replace(/n$/, '')
         return `Ich ${stem}e [?]`

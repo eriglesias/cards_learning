@@ -1,15 +1,13 @@
 import {createRouter, createMemoryHistory } from 'vue-router'
 import HomeView from './views/home-view.vue'
-import DativVerbs from './components/learning-card.vue'
+import LearningVerbs from './components/learning-card.vue'
 import SelectLearning from './views/learn-by.vue'
 const routes = [
     
     { path: '/', component: HomeView},
     { path: '/select', component: SelectLearning},
-    { path: '/learn/verbs/dative', component: DativVerbs},
-    //{ path: '/learn/verbs/accusative', component: AkkusativVerbs},
-    //{ path: '/learn/verbs/genitive', component: GenitiveVerbs},
-
+    { path: '/learn/verbs/:case', component: LearningVerbs}, // props: true? 
+   
 ]
 
 const router = createRouter({
