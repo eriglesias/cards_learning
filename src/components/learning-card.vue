@@ -6,10 +6,14 @@
     import SentenceTemplate from './sentence-template.vue';
     import Answer from './answer.vue';
     import { ref } from 'vue';
-    import { useRoute } from 'vue-router';
-
+    import { useRoute, useRouter } from 'vue-router';
+    import { computed } from 'vue'; 
+    
     const ok = ref(true);
     const route = useRoute();
+    const router = useRouter();
+    
+    console.log(router);
     console.log(route.params);
     console.log(route.params.case);
     console.log(route.query);
@@ -46,6 +50,12 @@
         ask normalized data: give me the verbs for this case
     */
     
+    const verbsForThisCase = computed(() => {
+        const selectCase = route.params.case
+        return normalized.verbsByCase[selectCase]
+    })
+
+    console.log(Object.values(normalized.verbsById))
 </script>
 
 <template>

@@ -14,6 +14,8 @@ import SelectMode from './views/learn-by.vue'
     <RouterLink to="/">Go to Home</RouterLink>
     <RouterLink to="/select">Go to Select Learning Case</RouterLink>
     <RouterLink to="/learn/verbs/dative">Learn Dative Verbs</RouterLink>
+    <RouterLink to="/learn/verbs/accusative">Learn Accusative Verbs</RouterLink>
+    <RouterLink to="/learn/verbs/genitive">Learn Genitive Verbs</RouterLink>
   </nav>
   <main>
     <RouterView />
