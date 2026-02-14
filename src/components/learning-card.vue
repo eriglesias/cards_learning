@@ -13,10 +13,11 @@
     const route = useRoute();
     const router = useRouter();
     
-    console.log(router);
-    console.log(route.params);
-    console.log(route.params.case);
-    console.log(route.query);
+    //console.log(router);
+    //console.log(route.params);
+    //console.log(route.params.case);
+    //console.log(route.query);
+    //console.log(normalized.verbsById);
     
     function buildSentenceTemplate(inf) {
         let stem = inf.replace(/en$/, '').replace(/n$/, '')
@@ -45,21 +46,20 @@
         return values[randomIndex]; 
     }
 
-    /*  TODO:
-        read case from route
-        ask normalized data: give me the verbs for this case
-    */
     
     const verbsForThisCase = computed(() => {
         const selectCase = route.params.case
-        return normalized.verbsByCase[selectCase]
+        const ids =  normalized.verbsByCase[selectCase]
+        if (!ids) return []
+        return Array.from(ids).map(id => normalized.verbsById[id])
+
     })
 
-    console.log(Object.values(normalized.verbsById))
+
 </script>
 
 <template>
-    <template v-for="card in Object.values(normalized.verbsById)"
+    <template v-for="card in verbsForThisCase"
         :key="card.id"
     >
         <template v-if="ok">
