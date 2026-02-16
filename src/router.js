@@ -1,4 +1,5 @@
-import {createRouter, createMemoryHistory } from 'vue-router'
+import {createRouter} from 'vue-router'
+import { createWebHistory } from 'vue-router'
 import HomeView from './views/home-view.vue'
 import LearningVerbs from './components/learning-card.vue'
 import Normalization from './services/normalize'
@@ -9,7 +10,8 @@ const routes = [
     
     { path: '/', component: HomeView},
     { path: '/select', component: SelectLearning},
-    { path: '/learn/verbs/:case', 
+    { path: '/learn/verbs/:case',
+        name: 'learn-verbs', 
         component: LearningVerbs,
         beforeEnter: (to) => {
              const caseParam = to.params.case
@@ -22,7 +24,7 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createMemoryHistory(),
+    history: createWebHistory(),
     routes,
 })
 
