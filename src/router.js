@@ -1,7 +1,8 @@
 import {createRouter} from 'vue-router'
 import { createWebHistory } from 'vue-router'
 import HomeView from './views/home-view.vue'
-import LearningVerbs from './components/learning-card.vue'
+//import LearningVerbs from './components/learning-card.vue'
+import LearningVerbs from './components/test-learning-verbs.vue'
 import Normalization from './services/normalize'
 import SelectLearning from './views/learn-by.vue'
 
