@@ -1,12 +1,7 @@
 
 <script setup>
 
-    /*  Read route param
-        Get verbs for that case
-        Render the first verb only
-        Add a button: Reveal
-        Add another Next 
-    */
+  
 
     import normalized from '../services/normalize';
     import CardTitle from './card-title.vue';
@@ -73,25 +68,22 @@
 
 </script>
 
-<<template>
-        <div v-if="currentCard">
-             <div v-if="!isRevealed" id="op_1">
-                <CardTitle :card-title="card.verbInfinitive"/>
-                <SentenceTemplate :sentence-template="buildSentenceTemplate(card.verbInfinitive)"/>
-                <button @click="reveal"> Show Answer</button>
-            </div>
-            <div>
-                <button @click = "next()"> Next </button>
-            </div>
-            <div id="op_2">
-            <CardTitle :card-title="card.verbInfinitive"/>
-            <Answer :answer="giveAnswer(card.verbInfinitive ) + returnCase()"/> 
-            </div>
+<template>
+    <div v-if="currentCard">
+        <div v-if="!isRevealed" id="op_1">
+            <CardTitle :card-title="currentCard.verbInfinitive"/>
+            <SentenceTemplate :sentence-template="buildSentenceTemplate(currentCard.verbInfinitive)"/>
+            <button @click="reveal"> Show Answer</button>
         </div>
-        
-    
-    
-  
+    <div v-else id="op_2">
+        <CardTitle :card-title="currentCard.verbInfinitive"/>
+        <Answer :answer="giveAnswer(currentCard.verbInfinitive ) + returnCase()"/> 
+        <button @click = "next"> Next </button>
+    </div>
+     </div>
+    <div v-else>
+        <p>No cards available.</p>
+        </div>      
 </template>
 
 <style scoped>
