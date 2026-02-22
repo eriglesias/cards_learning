@@ -20,9 +20,11 @@
         isFinished,
         isRevealed,
         reveal,
-        next,
+        rate,
         restart
-    } = useTrainer()
+    } = useTrainer(selectedCase)
+
+    const selectedCase = route.params.case;
         
     function buildSentenceTemplate(inf) {
         let stem = inf.replace(/en$/, '').replace(/n$/, '')
@@ -68,7 +70,6 @@
         :sentence-template="buildSentenceTemplate(currentCard.verbInfinitive)"
       />
       <button @click="reveal">Show Answer</button>
-      <!-- somehow I instert a rating here hard, easy, etc.. -->
     </div>
 
     <div v-else id="op_2">
@@ -76,7 +77,10 @@
       <Answer 
         :answer="giveAnswer(currentCard.verbInfinitive) + returnCase()"
       />
-      <button @click="next">Next</button>
+      <button @click="rate('again')">Again</button>
+      <button @click="rate('hard')">Hard</button>
+      <button @click="rate('good')">Good</button>
+      <button @click="rate('easy')">Easy</button>
     </div>
 
   </div>

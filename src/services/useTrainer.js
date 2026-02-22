@@ -1,35 +1,41 @@
 import { ref, computed } from 'vue';
-import { useRoute } from 'vue-router';
 import normalized from './normalize';
 
 export function useTrainer() {
 
 const currentIndex = ref(0)
 const isRevealed = ref(false);
-const route = useRoute()
+function useTrainer(cards) {
+
+}
 
 const verbsForThisCase = computed(() => {
-    const selectCase = route.params.case
-    const ids =  normalized.verbsByCase[selectCase]
+    const ids =  normalized.verbsByCase[]
     if (!ids) return []
     return Array.from(ids).map(id => normalized.verbsById[id])
 })
+
 
 const isFinished = computed (() => {
     return currentIndex.value >= verbsForThisCase.value.length
 })
 
+
 const currentCard = computed(() => {
     return verbsForThisCase.value[currentIndex.value]
 })
  
+
 function reveal() {
     isRevealed.value = true
 }
 
-function next() {
+function rate(difficulty) {
     currentIndex.value++
     isRevealed.value = false
+    if (difficulty == "hard") {
+        currentIndex.value--
+    }
 }
 
 function restart() {
@@ -44,7 +50,7 @@ return {
     isFinished,
     isRevealed,
     reveal,
-    next,
+    rate,
     restart
 } 
 
