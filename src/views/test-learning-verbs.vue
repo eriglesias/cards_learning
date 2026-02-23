@@ -5,6 +5,7 @@
     import SentenceTemplate from '../components/sentence-template.vue';
     import Answer from '../components/answer.vue';
     import { useTrainer } from '../services/useTrainer';
+    import normalized from './normalize';
 
     /* session engine:
         card id
@@ -14,6 +15,12 @@
     */
 
     // what does the algo and what do I need to implement in my sesssion?
+
+    const verbsForThisCase = computed(() => {
+    const ids =  normalized.verbsByCase[s]
+    if (!ids) return []
+    return Array.from(ids).map(id => normalized.verbsById[id])
+    })
 
     const {
         currentCard,

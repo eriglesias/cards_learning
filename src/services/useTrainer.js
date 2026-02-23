@@ -1,19 +1,14 @@
 import { ref, computed } from 'vue';
-import normalized from './normalize';
+// import from application layer data 
 
 export function useTrainer() {
 
+    
 const currentIndex = ref(0)
 const isRevealed = ref(false);
 function useTrainer(cards) {
 
 }
-
-const verbsForThisCase = computed(() => {
-    const ids =  normalized.verbsByCase[]
-    if (!ids) return []
-    return Array.from(ids).map(id => normalized.verbsById[id])
-})
 
 
 const isFinished = computed (() => {
@@ -30,13 +25,15 @@ function reveal() {
     isRevealed.value = true
 }
 
+
 function rate(difficulty) {
     currentIndex.value++
     isRevealed.value = false
     if (difficulty == "hard") {
-        currentIndex.value--
+        /* something happens */
     }
 }
+
 
 function restart() {
     currentIndex.value = 0
