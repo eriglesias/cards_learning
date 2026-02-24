@@ -1,8 +1,8 @@
 //import data from '../data/canonical.json' with { type: 'json'}; //-- Quokka error free version
-//import fs from 'fs';
-//const data = JSON.parse(fs.readFileSync('./src/data/canonical.json', 'utf8'));
+import fs from 'fs';
+const data = JSON.parse(fs.readFileSync('./src/data/canonical.json', 'utf8'));
 //import { normalize } from 'path';
-import data from '../data/canonical.json'  with {type: 'json'};
+//import data from '../data/canonical.json'  with {type: 'json'};
 /*console.log(data)
 console.log("Data type", typeof data);
 console.log("Is array?", Array.isArray(data));

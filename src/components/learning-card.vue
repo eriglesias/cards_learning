@@ -1,7 +1,7 @@
 
 <script setup>
 
-    import normalized from '../services/normalize';
+    import normalized from '../data/normalize';
     import CardTitle from './card-title.vue';
     import SentenceTemplate from './sentence-template.vue';
     import Answer from './answer.vue';

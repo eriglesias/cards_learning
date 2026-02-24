@@ -4,23 +4,24 @@
     import CardTitle from '../components/card-title.vue';
     import SentenceTemplate from '../components/sentence-template.vue';
     import Answer from '../components/answer.vue';
-    import { useTrainer } from '../services/useTrainer';
-    import normalized from './normalize';
-
-    /* session engine:
-        card id
-        user rating (again/ hard / good / easy)
-        previous scheduling state
-        returning a new interval + due date
-    */
-
-    // what does the algo and what do I need to implement in my sesssion?
+    import { useTrainer } from '../application/useTrainer';
+    import normalized from '../data/normalize';
+    import { useRoute} from 'vue-router'
+    const route = useRoute()
+    const selectedCase = route.params.case;
 
     const verbsForThisCase = computed(() => {
-    const ids =  normalized.verbsByCase[s]
-    if (!ids) return []
-    return Array.from(ids).map(id => normalized.verbsById[id])
+        const ids =  normalized.verbsByCase[selectedCase]
+        if (!ids) return []
+        return Array.from(ids).map(id => normalized.verbsById[id])
     })
+
+    function createCards(verbsForThisCase) {
+        const inf = verbsForThisCase.verbInfinitive;
+
+    }
+
+    const cards = createCardsForCase(selectedCase)
 
     const {
         currentCard,
@@ -29,36 +30,7 @@
         reveal,
         rate,
         restart
-    } = useTrainer(selectedCase)
-
-    const selectedCase = route.params.case;
-        
-    function buildSentenceTemplate(inf) {
-        let stem = inf.replace(/en$/, '').replace(/n$/, '')
-        return `Ich ${stem}e [?]`
-    }
-
-    function giveAnswer(inf) {
-        let stem = inf.replace(/en$/, '').replace(/n$/, '')
-        return `Ich ${stem}e `
-    }
-    
-   function returnCase() {
-        let dativSubject = {
-            "ich": "mir",
-            "du": "dir",
-            "er": "ihm",
-            "sie": "ihr",
-            "es": "ihm",
-            "wir": "uns",
-            "ihr": "euch",
-            "sie": "ihnen",
-            "Sie": "Ihnen"
-        }
-        const values = Object.values(dativSubject);
-        const randomIndex = Math.floor(Math.random() * values.length);
-        return values[randomIndex]; 
-    }
+    } = useTrainer(cards)
 
 </script>
 
