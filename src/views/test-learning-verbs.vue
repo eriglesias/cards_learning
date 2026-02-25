@@ -5,10 +5,11 @@
     import SentenceTemplate from '../components/sentence-template.vue';
     import Answer from '../components/answer.vue';
     import { useTrainer } from '../application/useTrainer';
-    import normalized from '../data/normalize';
     import { useRoute} from 'vue-router'
     const route = useRoute()
     const selectedCase = route.params.case;
+    import normalized from '../data/normalize';
+
 
     const verbsForThisCase = computed(() => {
         const ids =  normalized.verbsByCase[selectedCase]
@@ -20,7 +21,7 @@
         const inf = verbsForThisCase.verbInfinitive;
 
     }
-
+  
     const cards = createCardsForCase(selectedCase)
 
     const {
@@ -42,7 +43,7 @@
   </div>
 
   <div v-else>
-
+    <!--view shouldnt do string manipulation, domain should bring prompt and solution fields-->
     <div v-if="!isRevealed" id="op_1">
       <CardTitle :card-title="currentCard.verbInfinitive"/>
       <SentenceTemplate 
