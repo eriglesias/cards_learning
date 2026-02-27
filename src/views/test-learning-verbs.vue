@@ -4,7 +4,7 @@
     import CardTitle from '../components/card-title.vue';
     import SentenceTemplate from '../components/sentence-template.vue';
     import Answer from '../components/answer.vue';
-    import { useTrainer } from '../application/useTrainer';
+    import { useTrainer } from '../application/trainer';
     import { useRoute} from 'vue-router'
     const route = useRoute()
     const selectedCase = route.params.case;
@@ -32,6 +32,18 @@
         rate,
         restart
     } = useTrainer(cards)
+
+
+    function buildSentenceTemplate(inf) {
+        let stem = inf.replace(/en$/, '').replace(/n$/, '')
+        return `Ich ${stem}e [?]`
+    }
+
+    function giveAnswer(inf) {
+        let stem = inf.replace(/en$/, '').replace(/n$/, '')
+        return `Ich ${stem}e `
+    }
+    
 
 </script>
 
