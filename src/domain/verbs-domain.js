@@ -2,9 +2,29 @@
 
 // translation layer if case === "dative" internally map to "dativ"
 
+/* verbs-domain should expose grammar operations, it should not know about exercise, surface, evaluation, distractors 
 
-getExerciseCores(criteria)
-evaluate(core, userAnswer, config)
+/*
+possible structure
+grammar/
+verbs
+prepostions
+conjugation
+governance
+
+exercises/
+verbCaseProduction
+verbCaseRecognition
+prepositionCaseProduction
+
+trainer/
+
+ui/
+*/
+
+
+// for each exercise type: select candidates, create exercise, evaluate
+// adding a new dimension ExerciseType
 
 /* function returnCase() {
     let dativSubject = {
@@ -33,18 +53,33 @@ function selectVerbs(criteria, normalized) {
 
 // create core
 
-function createExerciseCore(verb, criteria) {
+function createExerciseCore(exerciseType, criteria) {
 
 }
 
 // surface generation
 
-function instantiateSurface(core, config, canonicalData){
+function instantiateSurface(core, exerciseType, config, canonicalData){
 
 }
 
 // evaluation
 
-function evaluate(core, surface, userAnswer){
+function evaluate(core, exerciseType, surface, userAnswer){
     
 }
+
+
+function getVerbsByCase(casell){
+
+}
+
+function conjugate(verbId, subject){
+
+}
+
+function getGovernedCase(verbId){
+
+
+}
+
