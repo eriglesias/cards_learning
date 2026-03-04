@@ -33,18 +33,6 @@
         restart
     } = useTrainer(cards)
 
-
-    function buildSentenceTemplate(inf) {
-        let stem = inf.replace(/en$/, '').replace(/n$/, '')
-        return `Ich ${stem}e [?]`
-    }
-
-    function giveAnswer(inf) {
-        let stem = inf.replace(/en$/, '').replace(/n$/, '')
-        return `Ich ${stem}e `
-    }
-    
-
 </script>
 
 <template>
