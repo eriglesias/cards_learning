@@ -288,6 +288,13 @@
                             "kind": "verb",
                             "verbInfinitive": "geben",
                             "subjectRole": "agent",
+                            "conjugation": {
+                                "present": {
+                                    "ich": "gebe",
+                                    "du": "gibst",
+                                    "er": "gibt"
+                                }
+                            },
                             "arguments": 
                                 [
                                     {   "role": "recipient",
