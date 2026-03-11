@@ -290,7 +290,6 @@
                             "subjectRole": "agent",
                             "conjugation": {
                                 "present": {
-                                    "ich": "gebe",
                                     "du": "gibst",
                                     "er": "gibt"
                                 }

@@ -5,52 +5,6 @@ case pronoun mapping
 */
 
 
-/* 
-grammar/
-conjugation
-caseMapping
-governance
-*/
-
-/*function buildSentenceTemplate(inf) {
-    let stem = inf.replace(/en$/, '').replace(/n$/, '')
-    return `Ich ${stem}e [?]`
-}
-
-function giveAnswer(inf) {
-    let stem = inf.replace(/en$/, '').replace(/n$/, '')
-    return `Ich ${stem}e `
-}
-
-function returnCase() {
-    let dativSubject = {
-        "ich": "mir",
-        "du": "dir",
-        "er": "ihm",
-        "sie": "ihr",
-        "es": "ihm",
-        "wir": "uns",
-        "ihr": "euch",
-        "sie": "ihnen",
-        "Sie": "Ihnen"
-    }
-    const values = Object.values(dativSubject);
-    const randomIndex = Math.floor(Math.random() * values.length);
-    return values[randomIndex]; 
-}*/
-
-/* 
-grammar must provide
-deriveStem(infinitive)
-conjugatePresent(infinite, subject)
-getPronoun(case, subject)
-
-no randomness, no templates, no sentence formatting 
-*/
-
-
-// put in the json if the verb is regular or irregular or should it be computed? 
-
 const pronouns = {
     dativ : {
         ich: "mir",
@@ -59,11 +13,26 @@ const pronouns = {
         sie: "ihr",
         wir: "uns",
         ihr: "euch",
+    },
+    accusative: {
+        ich: "mich",
+        du: "dich",
+        er: "ihn",
+        sie: "sie",
+        es: "es",
+        wir: "uns",
+        ihr: "euch",
+        Sie: "sie"
     }
 };
 
 console.log(pronouns.dativ.ich);
 
+/**
+ * gets the stem of a german regular verb
+ * @param {string} infinitive 
+ * @returns 
+ */
 function deriveStem(infinitive){
    if (infinitive.slice(-2) == 'en'){
         return infinitive.slice(0, -2)
@@ -72,6 +41,24 @@ function deriveStem(infinitive){
 
 console.log(deriveStem("antworten"));
 
+
+function applyPhonologicalRules(stem, suffix,  subject) {
+
+    
+    if ((stem.endsWith('d') || stem.endsWith('t')) && subject === 'du') {
+        suffix = 'est';
+    } else if ((stem.endsWith('d') || stem.endsWith('t')) && 
+               (subject === 'er' || subject === 'sie' || subject === 'es' || subject === 'ihr')) {
+        suffix = 'et';
+    } else if ((stem.endsWith('s') || stem.endsWith('ß') || stem.endsWith('x') || stem.endsWith('z')) && 
+               (subject === 'du')) {
+        suffix = 't';
+    }
+    
+    return suffix;
+}
+
+console.log(applyPhonologicalRules("find", "e", "du"));
 /**
  * Conjugates a regular german verb in the present tense
  * @param {string} infinitive 
@@ -81,19 +68,8 @@ console.log(deriveStem("antworten"));
 
 function conjugatePresent(infinitive, subject) {
     let stem = deriveStem(infinitive);
-    if (stem.endsWith("d") || stem.endsWith("t")){
-        const suffixMap = {
-        ich: 'e',
-        du: 'est',
-        er: 'et',
-        sie: 'et',
-        es: 'et',
-        wir: 'en',
-        ihr: 'et',
-        Sie: 'en'
-    };
-    }else {
-        const suffixMap = {
+    
+    const suffixMap = {
         ich: 'e',
         du: 'st',
         er: 't',
@@ -103,27 +79,35 @@ function conjugatePresent(infinitive, subject) {
         ihr: 't',
         Sie: 'en'
     };
-    }
-    
-    
-
     const key = subject.trim();
-    const suffix = suffixMap[key];
+    let suffix = suffixMap[key];
     if (suffix === undefined) {
         console.warn(`Unknown subject "${subject}" returning infinitive.`);
         return infinitive;
     }
+    suffix = applyPhonologicalRules(stem, suffix, key);
+
     return stem + suffix;
 }
 
-console.log(conjugatePresent("lernen", "ich"));
-console.log(conjugatePresent("lernen", "du"));
-console.log(conjugatePresent("lernen", "er"));
-console.log(conjugatePresent("lernen", "sie"));
-console.log(conjugatePresent("lernen", "wir"));
-console.log(conjugatePresent("lernen", "ihr"));
+console.log(conjugatePresent("finden", "ich"));
+console.log(conjugatePresent("finden", "du"));
 console.log(conjugatePresent("finden", "er"));
+console.log(conjugatePresent("finden", "sie"));
+console.log(conjugatePresent("finden", "wir"));
+console.log(conjugatePresent("finden", "ihr"));
+console.log(conjugatePresent("heißen", "ich"));
+console.log(conjugatePresent("heißen", "du"));
+console.log(conjugatePresent("heißen", "er"));
+console.log(conjugatePresent("heißen", "sie"));
+console.log(conjugatePresent("heißen", "wir"));
+console.log(conjugatePresent("heißen", "ihr"));
 
+/**
+ * 
+ * @param {string} pcase 
+ * @param {string} subject 
+ */
 function getPronoun(pcase, subject){
 //getPronoun("dative", "du") -> "dir"
 }
