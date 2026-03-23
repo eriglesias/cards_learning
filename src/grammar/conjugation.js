@@ -4,6 +4,17 @@ conjugation logic
 case pronoun mapping 
 */
 
+//import normalized from '../data/normalize';
+//let verbObject = normalized.verbsById;
+
+const suffixMap = {
+        '1sg': 'e',
+        '2sg': 'st',
+        '3sg': 't',
+        '1pl': 'en',
+        '2pl': 't',
+        '3pl': 'en'
+    };
 
 const pronouns = {
     dativ : {
@@ -14,7 +25,7 @@ const pronouns = {
         wir: "uns",
         ihr: "euch",
     },
-    accusative: {
+    accusativ: {
         ich: "mich",
         du: "dich",
         er: "ihn",
@@ -26,7 +37,7 @@ const pronouns = {
     }
 };
 
-console.log(pronouns.dativ.ich);
+//console.log(pronouns.dativ.ich);
 
 /**
  * gets the stem of a german regular verb
@@ -34,12 +45,26 @@ console.log(pronouns.dativ.ich);
  * @returns 
  */
 function deriveStem(infinitive){
-   if (infinitive.slice(-2) == 'en'){
+   if (infinitive.slice(-3) == 'eln'){
+        return (infinitive.slice(0, -3))
+   }else if (infinitive.slice(-2) == 'en'){
         return infinitive.slice(0, -2)
+   }  else if (infinitive.slice(-1) == 'n') {
+    return (infinitive.slice(0, -1))
    }
 }
 
 console.log(deriveStem("antworten"));
+console.log(deriveStem("handeln"));
+console.log(deriveStem("wandern"));
+
+
+function applyIrregularOverrides(verbOject, subject) {
+    // does verbObject have irregular present subject? yes return
+    // no continue normal pipeline 
+    // does verbObject.conjugation.present exists?
+    // does it contain thi subject?
+}
 
 
 function applyPhonologicalRules(stem, suffix,  subject) {
@@ -53,7 +78,7 @@ function applyPhonologicalRules(stem, suffix,  subject) {
     } else if ((stem.endsWith('s') || stem.endsWith('ß') || stem.endsWith('x') || stem.endsWith('z')) && 
                (subject === 'du')) {
         suffix = 't';
-    }
+    } 
     
     return suffix;
 }
@@ -66,19 +91,8 @@ console.log(applyPhonologicalRules("find", "e", "du"));
  * @returns {string} 
  */
 
-function conjugatePresent(infinitive, subject) {
+function conjugatePresent(verbOject, subject) {
     let stem = deriveStem(infinitive);
-    
-    const suffixMap = {
-        ich: 'e',
-        du: 'st',
-        er: 't',
-        sie: 't',
-        es: 't',
-        wir: 'en',
-        ihr: 't',
-        Sie: 'en'
-    };
     const key = subject.trim();
     let suffix = suffixMap[key];
     if (suffix === undefined) {
@@ -86,7 +100,6 @@ function conjugatePresent(infinitive, subject) {
         return infinitive;
     }
     suffix = applyPhonologicalRules(stem, suffix, key);
-
     return stem + suffix;
 }
 
@@ -102,6 +115,9 @@ console.log(conjugatePresent("heißen", "er"));
 console.log(conjugatePresent("heißen", "sie"));
 console.log(conjugatePresent("heißen", "wir"));
 console.log(conjugatePresent("heißen", "ihr"));
+console.log(conjugatePresent("handeln", "ich"));
+console.log(conjugatePresent("wandern", "ich"));
+
 
 /**
  * 
@@ -109,5 +125,13 @@ console.log(conjugatePresent("heißen", "ihr"));
  * @param {string} subject 
  */
 function getPronoun(pcase, subject){
-//getPronoun("dative", "du") -> "dir"
+ let result;
+ if (pronouns[pcase] in pronouns){
+    if (pronouns[pcase][subject] in pronouns){
+        result = pronouns[pcase][subject]
+    }
+ }
+ return result;
 }
+
+console.log(getPronoun("dativ", "ich"))
