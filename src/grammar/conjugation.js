@@ -1,11 +1,30 @@
-/*
-stem derivation
-conjugation logic
-case pronoun mapping 
-*/
 
-//import normalized from '../data/normalize';
-//let verbObject = normalized.verbsById;
+/*import normalized from '../data/normalize';
+let verbObject = normalized.verbsById;*/
+
+import fs from 'fs'
+const rawData = JSON.parse(fs.readFileSync('./src/data/canonical.json', 'utf8'));
+const eintraege = rawData.cards.verben.eintraege;
+
+const verbsByCase = { dative: new Set(), accusative: new Set(), genitive: new Set() };
+const verbsById = {};
+
+for (const element of eintraege) {
+  for (const argument of element.arguments) {
+    if (argument.case === 'dativ') verbsByCase.dative.add(element.id);
+    else if (argument.case === 'akkusativ') verbsByCase.accusative.add(element.id);
+    else if (argument.case === 'genitive') verbsByCase.genitive.add(element.id);
+  }
+  verbsById[element.id] = element;
+}
+
+const normalized = { verbsById, verbsByCase };
+let verbObject = normalized.verbsById;
+
+//console.log(verbObject);
+//console.log(verbObject['verb-antworten']);
+//console.log(verbObject['verb-antworten'].verbInfinitive);
+
 
 const suffixMap = {
         '1sg': 'e',
@@ -44,13 +63,13 @@ const pronouns = {
  * @param {string} infinitive 
  * @returns 
  */
-function deriveStem(infinitive){
-   if (infinitive.slice(-3) == 'eln'){
-        return (infinitive.slice(0, -3))
-   }else if (infinitive.slice(-2) == 'en'){
-        return infinitive.slice(0, -2)
-   }  else if (infinitive.slice(-1) == 'n') {
-    return (infinitive.slice(0, -1))
+function deriveStem(verbInfinitive){
+   if (verbInfinitive.slice(-3) == 'eln'){
+        return (verbInfinitive.slice(0, -3))
+   }else if (verbInfinitive.slice(-2) == 'en'){
+        return verbInfinitive.slice(0, -2)
+   }  else if (verbInfinitive.slice(-1) == 'n') {
+    return (verbInfinitive.slice(0, -1))
    }
 }
 
@@ -91,7 +110,8 @@ console.log(applyPhonologicalRules("find", "e", "du"));
  * @returns {string} 
  */
 
-function conjugatePresent(verbOject, subject) {
+function conjugatePresent(verbOject,subject) {
+    let infinitive = verbOject.verbInfinitive;
     let stem = deriveStem(infinitive);
     const key = subject.trim();
     let suffix = suffixMap[key];
@@ -103,35 +123,22 @@ function conjugatePresent(verbOject, subject) {
     return stem + suffix;
 }
 
-console.log(conjugatePresent("finden", "ich"));
-console.log(conjugatePresent("finden", "du"));
-console.log(conjugatePresent("finden", "er"));
-console.log(conjugatePresent("finden", "sie"));
-console.log(conjugatePresent("finden", "wir"));
-console.log(conjugatePresent("finden", "ihr"));
-console.log(conjugatePresent("heißen", "ich"));
-console.log(conjugatePresent("heißen", "du"));
-console.log(conjugatePresent("heißen", "er"));
-console.log(conjugatePresent("heißen", "sie"));
-console.log(conjugatePresent("heißen", "wir"));
-console.log(conjugatePresent("heißen", "ihr"));
-console.log(conjugatePresent("handeln", "ich"));
-console.log(conjugatePresent("wandern", "ich"));
+console.log(conjugatePresent(verbObject['verb-antworten'], "ich"));
+
 
 
 /**
- * 
+ * Gets the pronoun according to the grammatical case.
  * @param {string} pcase 
  * @param {string} subject 
  */
+
 function getPronoun(pcase, subject){
- let result;
- if (pronouns[pcase] in pronouns){
-    if (pronouns[pcase][subject] in pronouns){
-        result = pronouns[pcase][subject]
+    if (pcase in pronouns && subject in pronouns[pcase]){
+        return pronouns[pcase][subject];
     }
- }
- return result;
+    return undefined;
 }
+
 
 console.log(getPronoun("dativ", "ich"))
