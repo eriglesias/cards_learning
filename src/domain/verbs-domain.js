@@ -28,6 +28,7 @@ ui/
 
 // at creation time -> choose verb, choose subject -> derive correct object from subject -> free that inside exercise
 
+/*  Goes to scheduler 
 // fetch verbs
 function selectVerbs(criteria, normalized) {
     return normalized.verbsByCase[criteria.base]
@@ -50,7 +51,7 @@ function instantiateSurface(core, exerciseType, config, canonicalData){
 function evaluate(core, exerciseType, surface, userAnswer){
     
 }
-
+*/
 
 function getVerbsByCase(casell){
 

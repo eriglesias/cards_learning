@@ -25,6 +25,7 @@ let verbObject = normalized.verbsById;
 //console.log(verbObject['verb-antworten']);
 //console.log(verbObject['verb-antworten'].verbInfinitive);
 
+console.log(verbObject['verb-geben'].conjugation.present.du)
 
 const suffixMap = {
         '1sg': 'e',
@@ -59,6 +60,22 @@ const pronouns = {
 //console.log(pronouns.dativ.ich);
 
 /**
+ * Gets the pronoun according to the grammatical case.
+ * @param {string} pcase 
+ * @param {string} subject 
+ */
+
+function getPronoun(pcase, subject){
+    if (pcase in pronouns && subject in pronouns[pcase]){
+        return pronouns[pcase][subject];
+    }
+    return undefined;
+}
+
+
+console.log(getPronoun("dativ", "ich"))
+
+/**
  * gets the stem of a german regular verb
  * @param {string} infinitive 
  * @returns 
@@ -77,18 +94,32 @@ console.log(deriveStem("antworten"));
 console.log(deriveStem("handeln"));
 console.log(deriveStem("wandern"));
 
-
-function applyIrregularOverrides(verbOject, subject) {
-    // does verbObject have irregular present subject? yes return
-    // no continue normal pipeline 
-    // does verbObject.conjugation.present exists?
-    // does it contain thi subject?
+/**
+ * 
+ * @param {*} verbOject 
+ * @param {*} person 
+ * @returns 
+ */
+function applyIrregularOverrides(verbOject, person) {
+    console.log(verbObject['verb-geben'].conjugation.present)
+    if (present in verbObject.conjugation){
+        if (person in verbObject.conjugation.present){
+            return verbObject.conjugation.present.person;
+        }
+    } else {
+        return verbObject;
+    }
 }
 
-
+/**
+ * 
+ * @param {string} stem the calculated stem of a german verb gotten from deriveStem
+ * @param {string} suffix 
+ * @param {string} subject 
+ * @returns 
+ */
 function applyPhonologicalRules(stem, suffix,  subject) {
 
-    
     if ((stem.endsWith('d') || stem.endsWith('t')) && subject === 'du') {
         suffix = 'est';
     } else if ((stem.endsWith('d') || stem.endsWith('t')) && 
@@ -106,14 +137,14 @@ console.log(applyPhonologicalRules("find", "e", "du"));
 /**
  * Conjugates a regular german verb in the present tense
  * @param {string} infinitive 
- * @param {string} subject 
+ * @param {string} person 
  * @returns {string} 
  */
 
-function conjugatePresent(verbOject,subject) {
+function conjugatePresent(verbOject,person) {
     let infinitive = verbOject.verbInfinitive;
     let stem = deriveStem(infinitive);
-    const key = subject.trim();
+    const key = person.trim();
     let suffix = suffixMap[key];
     if (suffix === undefined) {
         console.warn(`Unknown subject "${subject}" returning infinitive.`);
@@ -123,22 +154,7 @@ function conjugatePresent(verbOject,subject) {
     return stem + suffix;
 }
 
-console.log(conjugatePresent(verbObject['verb-antworten'], "ich"));
+console.log(conjugatePresent(verbObject['verb-antworten'], "1sg"));
 
 
 
-/**
- * Gets the pronoun according to the grammatical case.
- * @param {string} pcase 
- * @param {string} subject 
- */
-
-function getPronoun(pcase, subject){
-    if (pcase in pronouns && subject in pronouns[pcase]){
-        return pronouns[pcase][subject];
-    }
-    return undefined;
-}
-
-
-console.log(getPronoun("dativ", "ich"))
