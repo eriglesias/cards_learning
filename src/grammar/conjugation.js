@@ -25,7 +25,7 @@ let verbObject = normalized.verbsById;
 //console.log(verbObject['verb-antworten']);
 //console.log(verbObject['verb-antworten'].verbInfinitive);
 
-console.log(verbObject['verb-geben'].conjugation.present.du)
+console.log(verbObject['verb-geben'].conjugation.present['2sg'])
 
 const suffixMap = {
         '1sg': 'e',
@@ -112,28 +112,28 @@ function applyIrregularOverrides(verbOject, person) {
 }
 
 /**
- * 
+ * Adjusts a verb suffix based on German phonological rules.
  * @param {string} stem the calculated stem of a german verb gotten from deriveStem
- * @param {string} suffix 
  * @param {string} subject 
- * @returns 
+ * @returns  {string} the adjusted suffix with any necessary vowel instertions applied
  */
-function applyPhonologicalRules(stem, suffix,  subject) {
-
-    if ((stem.endsWith('d') || stem.endsWith('t')) && subject === 'du') {
-        suffix = 'est';
+function applyPhonologicalRules(stem, person) {
+    
+    if ((stem.endsWith('d') || stem.endsWith('t')) && person === '2sg') {
+        return 'est';
     } else if ((stem.endsWith('d') || stem.endsWith('t')) && 
-               (subject === 'er' || subject === 'sie' || subject === 'es' || subject === 'ihr')) {
-        suffix = 'et';
+               (person === 'er' || person === 'sie' || person === 'es' || person === 'ihr')) {
+        return 'et';
     } else if ((stem.endsWith('s') || stem.endsWith('ß') || stem.endsWith('x') || stem.endsWith('z')) && 
-               (subject === 'du')) {
-        suffix = 't';
+               (person === 'du')) {
+        return 't';
     } 
     
-    return suffix;
+    return null;
 }
 
-console.log(applyPhonologicalRules("find", "e", "du"));
+console.log(applyPhonologicalRules("find", "2sg"));
+console.log(applyPhonologicalRules('antwort', '1sg'));
 /**
  * Conjugates a regular german verb in the present tense
  * @param {string} infinitive 
@@ -141,20 +141,32 @@ console.log(applyPhonologicalRules("find", "e", "du"));
  * @returns {string} 
  */
 
-function conjugatePresent(verbOject,person) {
-    let infinitive = verbOject.verbInfinitive;
-    let stem = deriveStem(infinitive);
-    const key = person.trim();
-    let suffix = suffixMap[key];
-    if (suffix === undefined) {
-        console.warn(`Unknown subject "${subject}" returning infinitive.`);
-        return infinitive;
-    }
-    suffix = applyPhonologicalRules(stem, suffix, key);
-    return stem + suffix;
+function conjugatePresent(verbObject,person) {
+    if (verbObject.conjugation!=null) {
+        if(person in verbObject.conjugation.present) {
+            return verbObject.conjugation.present[person];
+        }
+    } else {
+        let infinitive = verbObject.verbInfinitive;
+        console.log(infinitive);
+        let stem = deriveStem(infinitive);
+        console.log(stem);
+        const key = person.trim();
+        console.log(key);
+        let suffix = suffixMap[key];
+        console.log(suffix);
+        if (suffix === undefined) {
+            console.warn(`Unknown subject "${person}" returning infinitive.`);
+            return infinitive;
+        }
+        //suffix = applyPhonologicalRules(stem,key);
+        console.log(suffix);
+        return stem + suffix;
+    }   
 }
 
 console.log(conjugatePresent(verbObject['verb-antworten'], "1sg"));
+console.log(conjugatePresent(verbObject['verb-geben'], "2sg"));
 
 
 

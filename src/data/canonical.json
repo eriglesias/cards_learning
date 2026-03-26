@@ -290,8 +290,8 @@
                             "subjectRole": "agent",
                             "conjugation": {
                                 "present": {
-                                    "du": "gibst",
-                                    "er": "gibt"
+                                    "2sg": "gibst",
+                                    "3sg": "gibt"
                                 }
                             },
                             "arguments": 
