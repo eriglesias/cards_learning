@@ -2,6 +2,7 @@
 /*import normalized from '../data/normalize';
 let verbObject = normalized.verbsById;*/
 
+import { log } from 'console';
 import fs from 'fs'
 const rawData = JSON.parse(fs.readFileSync('./src/data/canonical.json', 'utf8'));
 const eintraege = rawData.cards.verben.eintraege;
@@ -24,8 +25,7 @@ let verbObject = normalized.verbsById;
 //console.log(verbObject);
 //console.log(verbObject['verb-antworten']);
 //console.log(verbObject['verb-antworten'].verbInfinitive);
-
-console.log(verbObject['verb-geben'].conjugation.present['2sg'])
+//console.log(verbObject['verb-geben'].conjugation.present['2sg'])
 
 const suffixMap = {
         '1sg': 'e',
@@ -37,13 +37,27 @@ const suffixMap = {
     };
 
 const pronouns = {
+    nominativ: {
+        ich: "ich",
+        du: "du",
+        er: "er",
+        sie: "sie",
+        es: "ihm",
+        wir: "uns",
+        ihr: "ihr",
+        sie_pl: "sie",
+        Sie_pl: "Sie"
+    },
     dativ : {
         ich: "mir",
         du: "dir",
         er: "ihm",
         sie: "ihr",
+        es: "ihm",
         wir: "uns",
         ihr: "euch",
+        sie_pl: "ihnen",
+        Sie_pl: "Ihnen",
     },
     accusativ: {
         ich: "mich",
@@ -53,16 +67,32 @@ const pronouns = {
         es: "es",
         wir: "uns",
         ihr: "euch",
-        Sie: "sie"
+        sie_pl: "sie",
+        Sie_pl: "sie"
+    },
+    genitiv: {
+        ich: "meiner",
+        du: "deiner",
+        er: "seiner",
+        sie: "ihrer",
+        es: "seiner",
+        wir: "unser",
+        ihr: "euer",
+        sie_pl: "ihrer",
+        Sie_pl: "Ihrer"
     }
 };
 
-//console.log(pronouns.dativ.ich);
+
 
 /**
- * Gets the pronoun according to the grammatical case.
- * @param {string} pcase 
- * @param {string} subject 
+ * Gets the personal pronoun according to the grammatical case.
+ * @param {string} pcase the grammatical case
+ * @param {string} subject the pronoun subject 
+ * @returns {string|undefined} the corresponding pronoun, or undefined if not found 
+ * @example
+ * getPronoun('dativ', 'ich'); // returns 'mir'
+ * getPronoun('genitiv', 'lhrgl'); // returns undefined
  */
 
 function getPronoun(pcase, subject){
@@ -73,12 +103,13 @@ function getPronoun(pcase, subject){
 }
 
 
-console.log(getPronoun("dativ", "ich"))
-
 /**
  * gets the stem of a german regular verb
- * @param {string} infinitive 
- * @returns 
+ * @param {string} verbInfinitive 
+ * @returns {string|undefined} the stem of the corresponding verb, or undefined if the ending is not recognized 
+ * @example
+ * deriveStem('machen'); // returns 'mach'
+ * deriveStem('sammeln'); // returns 'sammel'
  */
 function deriveStem(verbInfinitive){
    if (verbInfinitive.slice(-3) == 'eln'){
@@ -90,17 +121,14 @@ function deriveStem(verbInfinitive){
    }
 }
 
-console.log(deriveStem("antworten"));
-console.log(deriveStem("handeln"));
-console.log(deriveStem("wandern"));
 
 /**
- * 
+ * checks in the object from normalized data if the verb has an irregular conjugation and returns in according to the subject
  * @param {*} verbOject 
  * @param {*} person 
- * @returns 
+ * @returns {string|undefined}
  */
-function applyIrregularOverrides(verbOject, person) {
+function applyIrregularOverrides(verbObject, person) {
     console.log(verbObject['verb-geben'].conjugation.present)
     if (present in verbObject.conjugation){
         if (person in verbObject.conjugation.present){
@@ -129,7 +157,7 @@ function applyPhonologicalRules(stem, person) {
         return 't';
     } 
     
-    return null;
+    return suffixMap[person];
 }
 
 console.log(applyPhonologicalRules("find", "2sg"));
@@ -159,7 +187,7 @@ function conjugatePresent(verbObject,person) {
             console.warn(`Unknown subject "${person}" returning infinitive.`);
             return infinitive;
         }
-        //suffix = applyPhonologicalRules(stem,key);
+        suffix = applyPhonologicalRules(stem,key);
         console.log(suffix);
         return stem + suffix;
     }   
