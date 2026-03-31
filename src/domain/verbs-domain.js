@@ -1,5 +1,6 @@
 // what grammar operations exist
 
+import { conjugatePresent, getPronoun } from "../grammar/conjugation";
 
 // translation layer if case === "dative" internally map to "dativ"
 
@@ -53,6 +54,10 @@ function evaluate(core, exerciseType, surface, userAnswer){
     
 }
 */
+
+function getVerbsById(){
+    // returns the object 
+}
 
 function getVerbsByCase(casell){
 

@@ -1,31 +1,7 @@
 
-/*import normalized from '../data/normalize';
-let verbObject = normalized.verbsById;*/
-
-import { log } from 'console';
-import fs from 'fs'
-const rawData = JSON.parse(fs.readFileSync('./src/data/canonical.json', 'utf8'));
-const eintraege = rawData.cards.verben.eintraege;
-
-const verbsByCase = { dative: new Set(), accusative: new Set(), genitive: new Set() };
-const verbsById = {};
-
-for (const element of eintraege) {
-  for (const argument of element.arguments) {
-    if (argument.case === 'dativ') verbsByCase.dative.add(element.id);
-    else if (argument.case === 'akkusativ') verbsByCase.accusative.add(element.id);
-    else if (argument.case === 'genitive') verbsByCase.genitive.add(element.id);
-  }
-  verbsById[element.id] = element;
-}
-
-const normalized = { verbsById, verbsByCase };
+import normalized from '../data/normalize';
 let verbObject = normalized.verbsById;
 
-//console.log(verbObject);
-//console.log(verbObject['verb-antworten']);
-//console.log(verbObject['verb-antworten'].verbInfinitive);
-//console.log(verbObject['verb-geben'].conjugation.present['2sg'])
 
 const suffixMap = {
         '1sg': 'e',
@@ -84,7 +60,6 @@ const pronouns = {
 };
 
 
-
 /**
  * Gets the personal pronoun according to the grammatical case.
  * @param {string} pcase the grammatical case
@@ -123,52 +98,62 @@ function deriveStem(verbInfinitive){
 
 
 /**
- * checks in the object from normalized data if the verb has an irregular conjugation and returns in according to the subject
- * @param {*} verbOject 
- * @param {*} person 
- * @returns {string|undefined}
+ * Returns the irregular present tense conjugation for a verb if an override exists.
+ * @param {*} verbOject a normalized verb data object 
+ * @param {*} person the grammatical person in shorthand notation '1sg','1pl', etc
+ * @returns {string|undefined} the irregular conjugated from, or undefined if no override exists.
+ * @example
+ * applyIrregularOverrides(verbData['verb-geben'], '2sg'); // returns 'gibst'
+ * applyIrregularOverrides(verbData['verb-geben'], '2sg'); // returns undefined (no override)
  */
 function applyIrregularOverrides(verbObject, person) {
-    console.log(verbObject['verb-geben'].conjugation.present)
     if (present in verbObject.conjugation){
         if (person in verbObject.conjugation.present){
             return verbObject.conjugation.present.person;
         }
     } else {
-        return verbObject;
+        return undefined;
     }
 }
 
+
 /**
  * Adjusts a verb suffix based on German phonological rules.
+ * Falls back to the standar suffix from suffixMap if no special rules applies.
  * @param {string} stem the calculated stem of a german verb gotten from deriveStem
- * @param {string} subject 
+ * @param {string} person the grammatical person in shorthand notation '1sg','1pl', etc
  * @returns  {string} the adjusted suffix with any necessary vowel instertions applied
+ * @example applyPhonologicalRules()
+ * applyPhonologicalRules('arbeit', '2sg'); // returns 'est'
+ * applyPhonologicalRules('reis',   '2sg'); // returns 't' 
  */
 function applyPhonologicalRules(stem, person) {
     
     if ((stem.endsWith('d') || stem.endsWith('t')) && person === '2sg') {
         return 'est';
     } else if ((stem.endsWith('d') || stem.endsWith('t')) && 
-               (person === 'er' || person === 'sie' || person === 'es' || person === 'ihr')) {
+               (person === '2sg' || person === '2pl')) {
         return 'et';
     } else if ((stem.endsWith('s') || stem.endsWith('ß') || stem.endsWith('x') || stem.endsWith('z')) && 
-               (person === 'du')) {
+               (person === '2sg')) {
         return 't';
     } 
     
     return suffixMap[person];
 }
 
-console.log(applyPhonologicalRules("find", "2sg"));
-console.log(applyPhonologicalRules('antwort', '1sg'));
-/**
- * Conjugates a regular german verb in the present tense
- * @param {string} infinitive 
- * @param {string} person 
- * @returns {string} 
- */
 
+/**
+ * Conjugates a regular german verb in the present tense for a given grammatical person.
+ * If the verb object contains an explicit conjugation, that entry is returned directly (irregular).
+ * Otherwise the form is built deriving the stem from the infinitive and appending the suffix produced by applyPhonologicalRules().
+ * @param {string} infinitive  a normalized verb data object 
+ * @param {string} person the grammatical person in shorthand notation '1sg', '1pl'
+ * @returns {string} the german verb conjugated for that person 
+ * @example
+ * conjugatePresent(verbData['verb-machen'], '1sg'); // returns 'mache'
+ * conjugatePresent(verbData['verb-geben'],  '2sg'); // returns 'gibst' 
+ */
 function conjugatePresent(verbObject,person) {
     if (verbObject.conjugation!=null) {
         if(person in verbObject.conjugation.present) {
@@ -193,8 +178,9 @@ function conjugatePresent(verbObject,person) {
     }   
 }
 
-console.log(conjugatePresent(verbObject['verb-antworten'], "1sg"));
-console.log(conjugatePresent(verbObject['verb-geben'], "2sg"));
+export function getPronoun() {};
+export function conjugatePresent() {};
+
 
 
 
