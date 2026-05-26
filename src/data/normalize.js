@@ -1,6 +1,6 @@
-//import data from '../data/canonical.json' with { type: 'json'}; //-- Quokka error free version
-import fs from 'fs';
-const data = JSON.parse(fs.readFileSync('./src/data/canonical.json', 'utf8'));
+import data from '../data/canonical.json' with { type: 'json'}; 
+//import fs from 'fs';
+//const data = JSON.parse(fs.readFileSync('./src/data/canonical.json', 'utf8'));
 //import { normalize } from 'path';
 //import data from '../data/canonical.json'  with {type: 'json'};
 /*console.log(data)
@@ -85,9 +85,9 @@ const eintraege = data.cards.verben.eintraege
 
 
 const  verbsByCase = {
-     dative : new Set(),
-     accusative : new Set(),
-     genitive: new Set()
+     dativ : new Set(),
+     akkusativ : new Set(),
+     genitiv: new Set()
 };
 
 const verbsById = { }
@@ -95,13 +95,13 @@ const verbsById = { }
 for (const element of eintraege) {
     for (const argument of element.arguments) {
         if (argument.case == 'dativ') {
-            verbsByCase.dative.add(element.id)
+            verbsByCase.dativ.add(element.id)
         }
         else if (argument.case == 'akkusativ') {
-             verbsByCase.accusative.add(element.id)
+             verbsByCase.akkusativ.add(element.id)
         }
-        else if (argument.case == 'genitive') {
-             verbsByCase.genitive.add(element.id)
+        else if (argument.case == 'genitiv') {
+             verbsByCase.genitiv.add(element.id)
         }
     }
 }
@@ -112,8 +112,8 @@ for (const element of eintraege) {
     verbsById[element.id] = element;
 }
 
-console.log(verbsByCase);
-console.log(verbsById)
+//console.log(verbsByCase);
+//console.log(verbsById)
 
 const normalized = {
   verbsById,

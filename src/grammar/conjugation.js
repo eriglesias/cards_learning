@@ -1,7 +1,7 @@
 
-import normalized from '../data/normalize';
-let verbObject = normalized.verbsById;
-
+//import normalized from '../data/normalize.js';
+//let verbObject = normalized.verbsById;
+// conjugation.js zero knowledge of data layer, pure grammar
 
 const suffixMap = {
         '1sg': 'e',
@@ -96,6 +96,16 @@ function deriveStem(verbInfinitive){
    }
 }
 
+/**
+ * example danken -> dativ
+ * sehen -> accusative
+ * if multiple arguments exist, define rule: primary argument or return array
+ * @param {*} verbObject 
+ */
+function getVerbCase(verbObject){
+
+
+}
 
 /**
  * Returns the irregular present tense conjugation for a verb if an override exists.
@@ -107,9 +117,9 @@ function deriveStem(verbInfinitive){
  * applyIrregularOverrides(verbData['verb-geben'], '2sg'); // returns undefined (no override)
  */
 function applyIrregularOverrides(verbObject, person) {
-    if (present in verbObject.conjugation){
+    if ("present" in verbObject.conjugation){
         if (person in verbObject.conjugation.present){
-            return verbObject.conjugation.present.person;
+            return verbObject.conjugation.present[person];
         }
     } else {
         return undefined;
@@ -161,26 +171,26 @@ function conjugatePresent(verbObject,person) {
         }
     } else {
         let infinitive = verbObject.verbInfinitive;
-        console.log(infinitive);
+        //console.log(infinitive);
         let stem = deriveStem(infinitive);
-        console.log(stem);
+        //console.log(stem);
         const key = person.trim();
-        console.log(key);
+        //console.log(key);
         let suffix = suffixMap[key];
-        console.log(suffix);
+        //console.log(suffix);
         if (suffix === undefined) {
             console.warn(`Unknown subject "${person}" returning infinitive.`);
             return infinitive;
         }
         suffix = applyPhonologicalRules(stem,key);
-        console.log(suffix);
+        //console.log(suffix);
         return stem + suffix;
     }   
 }
 
-export function getPronoun() {};
-export function conjugatePresent() {};
-
+//export function getPronoun() {};
+//export function conjugatePresent() {};
+export { getPronoun, conjugatePresent };
 
 
 

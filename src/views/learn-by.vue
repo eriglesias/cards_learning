@@ -20,9 +20,9 @@
     <label for="learning_mode">Select your learning mode: </label>
     <select v-model="selectedCase" id="select_case">
         <option disabled value=""> >--choose --</option>
-        <option value="dative">Dative Verbs</option>
-        <option value="accusative">Akkusative Verbs</option>
-        <option value="genitive">Genitive Verbs</option>
+        <option value="dativ">Dative Verbs</option>
+        <option value="akkusativ">Accusative Verbs</option>
+        <option value="genitiv">Genitive Verbs</option>
     </select> 
     <button @click="startLearning"
     :disabled="!selectedCase">

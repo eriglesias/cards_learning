@@ -19,6 +19,22 @@
     //console.log(route.query);
     //console.log(normalized.verbsById);
     
+    // at the moment component still contains functions like buildSentenceTemplate and giveAnswer
+    // these are gammar presentation logic 
+
+    /*
+    possible future structure?
+    grammar/
+    conjugation.js
+    domain/
+    verbs-domain.js
+    trainer/
+    sentence-builder.js
+    exercise-generator.js
+    ui/
+    LearningCard.vue    
+    */
+
     function buildSentenceTemplate(inf) {
         let stem = inf.replace(/en$/, '').replace(/n$/, '')
         return `Ich ${stem}e [?]`
