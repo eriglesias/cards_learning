@@ -1,26 +1,16 @@
 
 <script setup>
 
-    import normalized from '../data/normalize';
+    import { getVerb , conjugate, getVerbsByCase, getVerbArguments, getGovernedCases } from '../domain/verbs-domain.js';
     import CardTitle from './card-title.vue';
     import SentenceTemplate from './sentence-template.vue';
     import Answer from './answer.vue';
     import { ref } from 'vue';
-    import { useRoute, useRouter } from 'vue-router';
     import { computed } from 'vue'; 
     
     const ok = ref(true);
-    const route = useRoute();
-    const router = useRouter();
+  
     
-    //console.log(router);
-    //console.log(route.params);
-    //console.log(route.params.case);
-    //console.log(route.query);
-    //console.log(normalized.verbsById);
-    
-    // at the moment component still contains functions like buildSentenceTemplate and giveAnswer
-    // these are gammar presentation logic 
 
     /*
     possible future structure?
@@ -35,7 +25,7 @@
     LearningCard.vue    
     */
 
-    function buildSentenceTemplate(inf) {
+    /* function buildSentenceTemplate(inf) {
         let stem = inf.replace(/en$/, '').replace(/n$/, '')
         return `Ich ${stem}e [?]`
     }
@@ -44,7 +34,9 @@
         let stem = inf.replace(/en$/, '').replace(/n$/, '')
         return `Ich ${stem}e `
     }
-    
+    */
+
+
    function returnCase() {
         let dativSubject = {
             "ich": "mir",
@@ -61,15 +53,6 @@
         const randomIndex = Math.floor(Math.random() * values.length);
         return values[randomIndex]; 
     }
-
-    
-    const verbsForThisCase = computed(() => {
-        const selectCase = route.params.case
-        const ids =  normalized.verbsByCase[selectCase]
-        if (!ids) return []
-        return Array.from(ids).map(id => normalized.verbsById[id])
-
-    })
 
 
 </script>

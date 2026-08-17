@@ -104,6 +104,7 @@ function getVerbsByCase(verbCase){
 
 // Semantic query layer
 // would be the primary API? 
+// should this function guarantee uniqueness?
 /**
  * 
  * @param {*} verbId 
