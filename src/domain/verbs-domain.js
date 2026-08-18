@@ -147,9 +147,17 @@ function conjugate(verbId, person){
     return conjugatePresent(getVerb(verbId), person)
 }
 
-// getPronoun(case, subject) if ui needss it often expose here otherwise keep in conjugation.js 
+/**
+ * wrapper function of getPronoun from conjugation.js 
+ * @param {*} verbCase 
+ * @param {*} subject 
+ * @returns 
+ */
+function getCasePronoun(verbCase, subject){
+    return getPronoun(verbCase, subject);
+} 
 // getLearningCandidates(criteria): filter verbs for learning mode
 // sampleVerb(case): returns random verb matching case 
 
 
-export { getVerb , conjugate, getVerbsByCase, getVerbArguments, getGovernedCases};
+export { getVerb , conjugate, getVerbsByCase, getVerbArguments, getGovernedCases, getCasePronoun};

@@ -1,23 +1,19 @@
 import { ref, computed } from 'vue';
 // import from application layer data 
 
-export function useTrainer() {
+export function useTrainer(cards) {
 
     
 const currentIndex = ref(0)
 const isRevealed = ref(false);
-function useTrainer(cards) {
-
-}
-
 
 const isFinished = computed (() => {
-    return currentIndex.value >= verbsForThisCase.value.length
+    return currentIndex.value >= cards.length
 })
 
 
 const currentCard = computed(() => {
-    return verbsForThisCase.value[currentIndex.value]
+    return cards[currentIndex.value]
 })
  
 

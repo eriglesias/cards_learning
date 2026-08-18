@@ -1,81 +1,45 @@
 
 <script setup>
-
-    import { getVerb , conjugate, getVerbsByCase, getVerbArguments, getGovernedCases } from '../domain/verbs-domain.js';
+    import { ref, computed} from 'vue';
+    import { getVerb , conjugate, getVerbsByCase, getVerbArguments, getGovernedCases, getCasePronoun } from '../domain/verbs-domain.js';
     import CardTitle from './card-title.vue';
     import SentenceTemplate from './sentence-template.vue';
     import Answer from './answer.vue';
-    import { ref } from 'vue';
-    import { computed } from 'vue'; 
     
-    const ok = ref(true);
-  
-    
-
-    /*
-    possible future structure?
-    grammar/
-    conjugation.js
-    domain/
-    verbs-domain.js
-    trainer/
-    sentence-builder.js
-    exercise-generator.js
-    ui/
-    LearningCard.vue    
-    */
-
-    /* function buildSentenceTemplate(inf) {
-        let stem = inf.replace(/en$/, '').replace(/n$/, '')
-        return `Ich ${stem}e [?]`
-    }
-
-    function giveAnswer(inf) {
-        let stem = inf.replace(/en$/, '').replace(/n$/, '')
-        return `Ich ${stem}e `
-    }
-    */
-
-
-   function returnCase() {
-        let dativSubject = {
-            "ich": "mir",
-            "du": "dir",
-            "er": "ihm",
-            "sie": "ihr",
-            "es": "ihm",
-            "wir": "uns",
-            "ihr": "euch",
-            "sie": "ihnen",
-            "Sie": "Ihnen"
+    const props = defineProps({
+        verbId: {
+            type: String,
+            required: true
         }
-        const values = Object.values(dativSubject);
-        const randomIndex = Math.floor(Math.random() * values.length);
-        return values[randomIndex]; 
-    }
+    });
 
+    const ok = ref(true);
+    const verb = computed(() => getVerb(props.verbId));
+    const promptTemplate = computed(() => 'Ich [?] ...');
+    const governedCases = computed(() => getGovernedCases(props.verbId));
+    const targetCase = governedCases.value?.[0] || 'dativ';
+    const pronoun = getCasePronoun(targetCase, ich);
+    const answerText = computed(() => {
+        const conjugated = conjugate(props.verbId, '1sg');
+        return `Ich ${conjugated} ${returnCase()}`;
+    });
 
 </script>
 
 <template>
-    <template v-for="card in verbsForThisCase"
-        :key="card.id"
-    >
-        <template v-if="ok">
-            <div id="op_1">
-                <CardTitle :card-title="card.verbInfinitive"/>
-                <SentenceTemplate :sentence-template="buildSentenceTemplate(card.verbInfinitive)"/>
-            </div>
-        </template>
-    <template v-else>
-        <div id="op_2">
-            <CardTitle :card-title="card.verbInfinitive"/>
-            <Answer :answer="giveAnswer(card.verbInfinitive ) + returnCase()"/> 
+    <div v-if="verb">
+        <div v-if="ok" id="op_1">
+            <CardTitle :card-title="verb.verbInfinitive" />
+            <SentenceTemplate :sentence-template="promptTemplate" />
         </div>
-    </template>
-    <button @click="ok = !ok">show</button>
-    </template>
-    
+        <div v-else id="op_2">
+            <CardTitle :card-title="verb.verbInfinitive" />
+            <Answer :answer="answerText" />
+        </div>
+        <button @click="ok = !ok">
+            {{  ok ? 'Show Answer' : 'Show Question' }}
+        </button>
+    </div>
 </template>
 
 
