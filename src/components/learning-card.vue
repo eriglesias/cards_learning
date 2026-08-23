@@ -1,6 +1,6 @@
 
 <script setup>
-    import { ref, computed} from 'vue';
+    import { ref, computed, watch} from 'vue';
     import { getVerb , conjugate, getVerbsByCase, getVerbArguments, getGovernedCases, getCasePronoun } from '../domain/verbs-domain.js';
     import CardTitle from './card-title.vue';
     import SentenceTemplate from './sentence-template.vue';
@@ -14,14 +14,18 @@
     });
 
     const ok = ref(true);
+    watch (() => props.verbId, () => {
+        ok.value = true;
+    })
     const verb = computed(() => getVerb(props.verbId));
     const promptTemplate = computed(() => 'Ich [?] ...');
     const governedCases = computed(() => getGovernedCases(props.verbId));
-    const targetCase = governedCases.value?.[0] || 'dativ';
-    const pronoun = getCasePronoun(targetCase, ich);
+    
     const answerText = computed(() => {
+        const targetCase = governedCases.value?.[0] || 'dativ';
         const conjugated = conjugate(props.verbId, '1sg');
-        return `Ich ${conjugated} ${returnCase()}`;
+        const pronoun = getCasePronoun(targetCase, 'er');
+        return ` Ich ${conjugated} ${pronoun}`;
     });
 
 </script>

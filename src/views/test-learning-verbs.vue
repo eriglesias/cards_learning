@@ -17,8 +17,6 @@
         restart
     } = useTrainer(verbIds)
 
-    
-
 </script>
 
 <template>

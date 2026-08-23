@@ -18,8 +18,8 @@ const pronouns = {
         du: "du",
         er: "er",
         sie: "sie",
-        es: "ihm",
-        wir: "uns",
+        es: "es",
+        wir: "wir",
         ihr: "ihr",
         sie_pl: "sie",
         Sie_pl: "Sie"
