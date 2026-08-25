@@ -1,13 +1,12 @@
 import { getVerb, conjugate, getCasePronoun, getGovernedCases } from "./verbs-domain.js";
 
-
+// check if getGovernedCases not necessary after ui and route import test
 /**
  * Generates a verbCaseProduction exercise object dinamically 
  * @param {string} verbId 
  * @param {string} targetCase (e.g. 'dativ', from route)
  * @param {Object} [options]
- * @param {string} [options.person] ('1sg', '2sg', '3sg', '1pl', '2pl', '3pl')
- * @param {string} [options.objectSubject] ('ich', 'du', 'er', 'sie', 'es', 'wir', 'ihr)
+ * @param {string} [options.object] ('ich', 'du', 'er', 'sie', 'es', 'wir', 'ihr)
  */
 export function createVerbCaseProduction(verbId, targetCase, options = {}) {
     const verb = getVerb(verbId);
@@ -23,12 +22,12 @@ export function createVerbCaseProduction(verbId, targetCase, options = {}) {
         'sie_pl': '3pl',    
         'Sie_pl': '3pl'    
     };
-    const availableSujects = Object.keys(subjectToConjugationPerson)
-    const activeSubject = options.subject || availableSujects[Math.floor(Math.random() * availableSujects.length)]
+    const availableSubjects = Object.keys(subjectToConjugationPerson)
+    const activeSubject = options.subject || availableSubjects[Math.floor(Math.random() * availableSubjects.length)]
     const availableObjects = ['ich', 'du', 'er', 'sie', 'es', 'wir', 'ihr', 'sie_pl', 'Sie_pl']
-    const activeObject = options.objectSubject || availableObjects[Math.floor(Math.random() * availableObjects.length)];
+    const activeObject = options.object || availableObjects[Math.floor(Math.random() * availableObjects.length)];
     
-    const subjectPronoun = getCasePronoun('nominativ', activeSubject || 'ich');
+    const subjectPronoun = getCasePronoun('nominativ', activeSubject);
     const conjugated = conjugate(verbId, subjectToConjugationPerson[activeSubject]);
     const expectedAnswer = getCasePronoun(targetCase, activeObject);
     const objectDisplayLabel = activeObject === 'sie_pl' ? 'sie (pl)': activeObject === 'Sie_pl' ? 'Sie' : activeObject;
@@ -39,14 +38,15 @@ export function createVerbCaseProduction(verbId, targetCase, options = {}) {
         itemId: `verb:${verbId}`,
         ui: {
             title: verb.verbInfinitive,
-            prompt: `${subjectPronoun} ${conjugated} ____ (${objectDisplayLabel}`,
+            prompt: `${subjectPronoun} ${conjugated} ____ (${objectDisplayLabel})`,
             fullSolution: `${subjectPronoun} ${conjugated} ${expectedAnswer}`
         },
         validation: {
             expectedAnswer: expectedAnswer,
             targetCase: targetCase,
-            person: activeSubject,
-            objectSubject: activeObject
+            subject: activeSubject,
+            person: subjectToConjugationPerson[activeSubject],
+            object: activeObject
         }
     };
 }
