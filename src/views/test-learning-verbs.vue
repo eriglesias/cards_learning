@@ -3,19 +3,19 @@
     import { useTrainer } from '../application/trainer';
     import { useRoute} from 'vue-router';
     import LearningCard from '../components/learning-card.vue';
-    import { getVerb , conjugate, getVerbsByCase, getVerbArguments, getGovernedCases } from '../domain/verbs-domain.js';
+    import {  getVerbsByCase} from '../domain/verbs-domain.js';
     const route = useRoute()
     const selectedCase = route.params.case;
     const verbIds = getVerbsByCase(selectedCase);
 
     const {
-        currentCard,
+        currentExercise,
         isFinished,
         isRevealed,
         reveal,
         rate,
         restart
-    } = useTrainer(verbIds)
+    } = useTrainer(verbIds, selectedCase)
 
 </script>
 
@@ -28,11 +28,12 @@
 
   <div v-else>
     <!--view shouldnt do string manipulation, domain should bring prompt and solution fields-->
-    <LearningCard :verb-id="currentCard" />
-    <button @click="rate('again')">Again</button>
-    <button @click="rate('hard')">Hard</button>
-    <button @click="rate('good')">Good</button>
-    <button @click="rate('easy')">Easy</button>
+    <LearningCard :exercise="currentExercise" :is-revealed="isRevealed" />
+    <button v-if="!isRevealed" @click="reveal">Show Answer</button>
+    <button  v-if="isRevealed" @click="rate('again')">Again</button>
+    <button  v-if="isRevealed" @click="rate('hard')">Hard</button>
+    <button  v-if="isRevealed" @click="rate('good')">Good</button>
+    <button  v-if="isRevealed" @click="rate('easy')">Easy</button>
   </div>
 
 </template>

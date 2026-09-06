@@ -1,21 +1,30 @@
 import { ref, computed } from 'vue';
+import { createVerbCaseProduction } from '../domain/exercise-factory.js';
 // import from application layer data 
 
-export function useTrainer(cards) {
+/**
+ * 
+ * @param {*} verbIds
+ * @param {*} targetCase 
+ * @returns 
+ */
+export function useTrainer(verbIds, targetCase) {
 
     
 const currentIndex = ref(0)
 const isRevealed = ref(false);
 
 const isFinished = computed (() => {
-    return currentIndex.value >= cards.length
+    return currentIndex.value >= verbIds.length
 })
 
 
-const currentCard = computed(() => {
-    return cards[currentIndex.value]
+const exercises = verbIds.map(id => createVerbCaseProduction(id, targetCase))
+
+const currentExercise = computed(() => {
+    return exercises[currentIndex.value]
 })
- 
+
 
 function reveal() {
     isRevealed.value = true
@@ -39,10 +48,10 @@ function restart() {
 
 return {
     
-    currentCard,
+    currentExercise,
     isFinished,
-    isRevealed,
     reveal,
+    isRevealed,
     rate,
     restart
 } 

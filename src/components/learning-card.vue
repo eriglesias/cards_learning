@@ -1,48 +1,27 @@
-
 <script setup>
-    import { ref, computed, watch} from 'vue';
-    import { getVerb , conjugate, getVerbsByCase, getVerbArguments, getGovernedCases, getCasePronoun } from '../domain/verbs-domain.js';
     import CardTitle from './card-title.vue';
     import SentenceTemplate from './sentence-template.vue';
     import Answer from './answer.vue';
     
     const props = defineProps({
-        verbId: {
-            type: String,
+        exercise: {
+            type: Object,
             required: true
-        }
+        },
+        isRevealed: { type: Boolean, required: true }
     });
-
-    const ok = ref(true);
-    watch (() => props.verbId, () => {
-        ok.value = true;
-    })
-    const verb = computed(() => getVerb(props.verbId));
-    const promptTemplate = computed(() => 'Ich [?] ...');
-    const governedCases = computed(() => getGovernedCases(props.verbId));
-    
-    const answerText = computed(() => {
-        const targetCase = governedCases.value?.[0] || 'dativ';
-        const conjugated = conjugate(props.verbId, '1sg');
-        const pronoun = getCasePronoun(targetCase, 'er');
-        return ` Ich ${conjugated} ${pronoun}`;
-    });
-
 </script>
 
 <template>
-    <div v-if="verb">
-        <div v-if="ok" id="op_1">
-            <CardTitle :card-title="verb.verbInfinitive" />
-            <SentenceTemplate :sentence-template="promptTemplate" />
+    <div v-if="props.exercise">
+        <div v-if="!isRevealed" id="op_1">
+            <CardTitle :card-title="props.exercise.ui.title" />
+            <SentenceTemplate :sentence-template="props.exercise.ui.prompt" />
         </div>
         <div v-else id="op_2">
-            <CardTitle :card-title="verb.verbInfinitive" />
-            <Answer :answer="answerText" />
+            <CardTitle :card-title="props.exercise.ui.title" />
+            <Answer :answer="props.exercise.ui.fullSolution" />
         </div>
-        <button @click="ok = !ok">
-            {{  ok ? 'Show Answer' : 'Show Question' }}
-        </button>
     </div>
 </template>
 
