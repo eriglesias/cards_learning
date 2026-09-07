@@ -6,7 +6,7 @@
 
 /**
  * Compares (evaluate) the exercise template with the user answer 
- * @param {*} exercise 
+ * @param {Object} exercise 
  * @param {*} userAnswer 
  */
 export function evaluate(exercise, userAnswer){

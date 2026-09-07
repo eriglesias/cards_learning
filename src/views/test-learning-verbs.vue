@@ -12,7 +12,8 @@
         currentExercise,
         isFinished,
         isRevealed,
-        reveal,
+        lastResult,
+        checkAnswer,
         rate,
         restart
     } = useTrainer(verbIds, selectedCase)
@@ -28,14 +29,12 @@
 
   <div v-else>
     <!--view shouldnt do string manipulation, domain should bring prompt and solution fields-->
-    <LearningCard :exercise="currentExercise" :is-revealed="isRevealed" />
-    <button v-if="!isRevealed" @click="reveal">Show Answer</button>
+    <LearningCard :exercise="currentExercise" :is-revealed="isRevealed" :last-result="lastResult" @submit="checkAnswer"/>
     <button  v-if="isRevealed" @click="rate('again')">Again</button>
     <button  v-if="isRevealed" @click="rate('hard')">Hard</button>
     <button  v-if="isRevealed" @click="rate('good')">Good</button>
     <button  v-if="isRevealed" @click="rate('easy')">Easy</button>
   </div>
-
 </template>
 
 

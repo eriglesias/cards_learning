@@ -1,6 +1,8 @@
 import { ref, computed } from 'vue';
 import { createVerbCaseProduction } from '../domain/exercise-factory.js';
+import { evaluate } from '../domain/evaluator.js';
 // import from application layer data 
+
 
 /**
  * 
@@ -9,7 +11,7 @@ import { createVerbCaseProduction } from '../domain/exercise-factory.js';
  * @returns 
  */
 export function useTrainer(verbIds, targetCase) {
-
+const lastResult = ref(null);
     
 const currentIndex = ref(0)
 const isRevealed = ref(false);
@@ -33,6 +35,7 @@ function reveal() {
 
 function rate(difficulty) {
     currentIndex.value++
+    lastResult.value = null;
     isRevealed.value = false
     if (difficulty == "hard") {
         /* something happens */
@@ -40,19 +43,29 @@ function rate(difficulty) {
 }
 
 
+function checkAnswer(rawAnswer){
+   lastResult.value = evaluate(currentExercise.value, rawAnswer);
+   isRevealed.value = true;
+   return lastResult;
+}
+
+
+
 function restart() {
+    lastResult.value = null;
     currentIndex.value = 0
     isRevealed.value = false
 }
 
 
 return {
-    
     currentExercise,
     isFinished,
     reveal,
     isRevealed,
     rate,
+    checkAnswer,
+    lastResult,
     restart
 } 
 
