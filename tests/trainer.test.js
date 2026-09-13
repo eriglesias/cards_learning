@@ -20,3 +20,12 @@ export function trainer_rate_resets_last_result() {
     trainer.rate('good');
     assertEqual(trainer.lastResult.value, null);
 }
+
+export function trainer_rate_records_result() {
+    const trainer = useTrainer(['verb-danken'], 'dativ');
+    trainer.checkAnswer('ihm');
+    trainer.rate('good');
+    assertEqual(trainer.reviewLog.value.length, 1);
+    assertTrue(trainer.reviewLog.value[0].correct);
+    assertEqual(trainer.reviewLog.value[0].difficulty, 'good');
+}

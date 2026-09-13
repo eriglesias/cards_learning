@@ -12,7 +12,7 @@ import { evaluate } from '../domain/evaluator.js';
  */
 export function useTrainer(verbIds, targetCase) {
 const lastResult = ref(null);
-    
+const reviewLog = ref([]);
 const currentIndex = ref(0)
 const isRevealed = ref(false);
 
@@ -34,12 +34,15 @@ function reveal() {
 
 
 function rate(difficulty) {
+    reviewLog.value.push({
+        exerciseId: currentExercise.value.id,
+        correct: lastResult.value?.correct ?? null,
+        difficulty,
+        timestamp: Date.now()
+    });
     currentIndex.value++
     lastResult.value = null;
     isRevealed.value = false
-    if (difficulty == "hard") {
-        /* something happens */
-    }
 }
 
 
@@ -52,6 +55,7 @@ function checkAnswer(rawAnswer){
 
 
 function restart() {
+    reviewLog.value = [];
     lastResult.value = null;
     currentIndex.value = 0
     isRevealed.value = false
@@ -66,6 +70,7 @@ return {
     rate,
     checkAnswer,
     lastResult,
+    reviewLog,
     restart
 } 
 
