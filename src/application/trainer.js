@@ -9,17 +9,20 @@ import { createInitialCard, computeNextCard, Rating } from '../domain/scheduler.
  * 
  * @param {*} verbIds
  * @param {*} targetCase 
+ * @param {*} cardRepository object with { loadAll, save, saveAll, clear }
  * @returns 
  */
-export function useTrainer(verbIds, targetCase) {
+export function useTrainer(verbIds, targetCase, cardRepository) {
 const lastResult = ref(null);
 const reviewLog = ref([]);
 const isRevealed = ref(false);
 const queue = ref([]);
 const RATING_MAP = { again: Rating.Again, hard: Rating.Hard, good: Rating.Good, easy: Rating.Easy};
+const savedStates = cardRepository.loadAll();
 queue.value = verbIds.map(id => {
     const exercise = createVerbCaseProduction(id, targetCase);
-    return { exercise, fsrsCard: createInitialCard() };
+    const saved = savedStates[exercise.id];
+    return { exercise, fsrsCard: saved ?? createInitialCard() };
 });
 queue.value.sort((a, b) => a.fsrsCard.due - b.fsrsCard.due )
 
@@ -32,11 +35,16 @@ function reveal() {
 }
 
 
+/**
+ * 
+ * @param {*} difficulty 
+ */
 function rate(difficulty) {
     const now = new Date();
     const item = queue.value.shift();
     const nextCard = computeNextCard(item.fsrsCard, RATING_MAP[difficulty], now);
     item.fsrsCard = nextCard;
+    cardRepository.save(item.exercise.id, item.fsrsCard);
     queue.value.push(item);
     queue.value.sort((a, b) => a.fsrsCard.due - b.fsrsCard.due);
 
@@ -51,6 +59,17 @@ function rate(difficulty) {
     isRevealed.value = false;
 }
 
+const sessionStats = computed(() => {
+    const total = reviewLog.value.length;
+    const correct = reviewLog.value.filter(r => r.correct).length;
+    return {
+        total,
+        correct,
+        incorrect: total - correct,
+        percentage: total > 0 ? Math.round((correct / total) * 100) : 0
+    };
+});
+
 
 function checkAnswer(rawAnswer){
    lastResult.value = evaluate(currentExercise.value, rawAnswer);
@@ -59,6 +78,7 @@ function checkAnswer(rawAnswer){
 }
 
 function restart() {
+    cardRepository.clear();
     reviewLog.value = [];
     lastResult.value = null;
     isRevealed.value = false;

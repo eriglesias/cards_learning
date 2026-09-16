@@ -12,7 +12,6 @@
         isRevealed: { type: Boolean, required: true },
         lastResult: {
             type: Object,
-            required: true,
             default: null
         }
     });
@@ -32,8 +31,8 @@
         <div v-if="!isRevealed" id="op_1">
             <CardTitle :card-title="props.exercise.ui.title" />
             <SentenceTemplate :sentence-template="props.exercise.ui.prompt" />
-            <input v-model="userInput">
-            <button @click="submitAnswer">Submit Answer</button>
+            <input v-model="userInput" @keyup.enter="submitAnswer">
+            <button @click="submitAnswer" :disabled="userInput === ''">Submit Answer</button>
         </div>
         <div v-else id="op_2">
             <CardTitle :card-title="props.exercise.ui.title" />

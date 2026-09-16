@@ -2,6 +2,7 @@
 
     import { useTrainer } from '../application/trainer';
     import { useRoute} from 'vue-router';
+    import { cardRepository } from '../infrastructure/card-repository.js';
     import LearningCard from '../components/learning-card.vue';
     import { getVerbsByCase} from '../domain/verbs-domain.js';
     const route = useRoute()
@@ -16,7 +17,7 @@
         checkAnswer,
         rate,
         restart
-    } = useTrainer(verbIds, selectedCase)
+    } = useTrainer(verbIds, selectedCase, cardRepository);
 
 </script>
 
@@ -24,6 +25,7 @@
   
   <div v-if="isFinished">
     <p>Session complete.</p>
+    <p>{{ sessionStats.correct }} / {{ sessionStats.total }} correct ({{ sessionStats.percentage }}%)</p>
     <button @click="restart">Restart</button>
   </div>
 

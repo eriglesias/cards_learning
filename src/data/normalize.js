@@ -79,6 +79,8 @@ console.log(filterTest)*/
 /*console.log(eintraege[0].id)
 console.log(eintraege[0].arguments[0].case)*/
 
+// EXTEND FOR PREPOSITIONS or create a src/data/prepositions.js
+
 /* Normalization */
 
 const eintraege = data.cards.verben.eintraege
