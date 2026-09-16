@@ -3,7 +3,8 @@ import { assertEqual, assertTrue } from "./assert.js";
 
 export function trainer_check_answer_correct(){
     const trainer = useTrainer(['verb-danken'], 'dativ');
-    trainer.checkAnswer('ihm');
+    const answer = trainer.currentExercise.value.validation.expectedAnswer;
+    trainer.checkAnswer(answer);
     assertTrue(trainer.lastResult.value.correct);
     assertTrue(trainer.isRevealed.value);
 }
@@ -23,7 +24,8 @@ export function trainer_rate_resets_last_result() {
 
 export function trainer_rate_records_result() {
     const trainer = useTrainer(['verb-danken'], 'dativ');
-    trainer.checkAnswer('ihm');
+    const answer = trainer.currentExercise.value.validation.expectedAnswer;
+    trainer.checkAnswer(answer);
     trainer.rate('good');
     assertEqual(trainer.reviewLog.value.length, 1);
     assertTrue(trainer.reviewLog.value[0].correct);

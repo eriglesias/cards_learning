@@ -1,6 +1,7 @@
 import { ref, computed } from 'vue';
 import { createVerbCaseProduction } from '../domain/exercise-factory.js';
 import { evaluate } from '../domain/evaluator.js';
+import { createInitialCard, computeNextCard, Rating } from '../domain/scheduler.js';
 // import from application layer data 
 
 
@@ -13,20 +14,18 @@ import { evaluate } from '../domain/evaluator.js';
 export function useTrainer(verbIds, targetCase) {
 const lastResult = ref(null);
 const reviewLog = ref([]);
-const currentIndex = ref(0)
 const isRevealed = ref(false);
+const queue = ref([]);
+const RATING_MAP = { again: Rating.Again, hard: Rating.Hard, good: Rating.Good, easy: Rating.Easy};
+queue.value = verbIds.map(id => {
+    const exercise = createVerbCaseProduction(id, targetCase);
+    return { exercise, fsrsCard: createInitialCard() };
+});
+queue.value.sort((a, b) => a.fsrsCard.due - b.fsrsCard.due )
 
-const isFinished = computed (() => {
-    return currentIndex.value >= verbIds.length
-})
+const isFinished = computed(() => queue.value.length === 0);
 
-
-const exercises = verbIds.map(id => createVerbCaseProduction(id, targetCase))
-
-const currentExercise = computed(() => {
-    return exercises[currentIndex.value]
-})
-
+const currentExercise = computed(() => queue.value[0]?.exercise ?? null);
 
 function reveal() {
     isRevealed.value = true
@@ -34,15 +33,22 @@ function reveal() {
 
 
 function rate(difficulty) {
+    const now = new Date();
+    const item = queue.value.shift();
+    const nextCard = computeNextCard(item.fsrsCard, RATING_MAP[difficulty], now);
+    item.fsrsCard = nextCard;
+    queue.value.push(item);
+    queue.value.sort((a, b) => a.fsrsCard.due - b.fsrsCard.due);
+
     reviewLog.value.push({
-        exerciseId: currentExercise.value.id,
+        exerciseId: item.exercise.id,
         correct: lastResult.value?.correct ?? null,
         difficulty,
-        timestamp: Date.now()
+        timestamp: now.getTime()
     });
-    currentIndex.value++
+
     lastResult.value = null;
-    isRevealed.value = false
+    isRevealed.value = false;
 }
 
 
@@ -52,13 +58,15 @@ function checkAnswer(rawAnswer){
    return lastResult;
 }
 
-
-
 function restart() {
     reviewLog.value = [];
     lastResult.value = null;
-    currentIndex.value = 0
-    isRevealed.value = false
+    isRevealed.value = false;
+    queue.value = verbIds.map(id => ({
+        exercise: createVerbCaseProduction(id, targetCase),
+        fsrsCard: createInitialCard()
+    }));
+    queue.value.sort((a, b) => a.fsrsCard.due - b.fsrsCard.due);
 }
 
 
