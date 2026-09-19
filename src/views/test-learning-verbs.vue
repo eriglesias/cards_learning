@@ -1,13 +1,15 @@
 <script setup>
 
+    import { createVerbCaseProduction } from '../domain/exercise-factory.js';
+    import { cardRepository } from '../infrastructure/card-repository.js';
     import { useTrainer } from '../application/trainer';
     import { useRoute} from 'vue-router';
-    import { cardRepository } from '../infrastructure/card-repository.js';
     import LearningCard from '../components/learning-card.vue';
     import { getVerbsByCase} from '../domain/verbs-domain.js';
     const route = useRoute()
     const selectedCase = route.params.case;
     const verbIds = getVerbsByCase(selectedCase);
+    const exercises = verbIds.map(id => createVerbCaseProduction(id, selectedCase));
 
     const {
         currentExercise,
@@ -16,8 +18,9 @@
         lastResult,
         checkAnswer,
         rate,
+        sessionStats,
         restart
-    } = useTrainer(verbIds, selectedCase, cardRepository);
+    } = useTrainer(exercises, cardRepository);
 
 </script>
 

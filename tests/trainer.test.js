@@ -1,12 +1,14 @@
 import {useTrainer} from '../src/application/trainer.js'
-import { loadAll, saveAll } from '../src/infrastructure/card-repository.js';
 import { assertEqual, assertTrue } from "./assert.js";
+import { createVerbCaseProduction } from '../src/domain/exercise-factory.js';
 
 const mockRepo = { loadAll: () => ({}), save: () => {}, saveAll: () => {}, clear: () => {} };
-const trainer = useTrainer(['verb-danken'], 'dativ', mockRepo);
+const exercises = [createVerbCaseProduction('verb-danken', 'dativ')];
+const trainer = useTrainer(exercises, mockRepo);
 
 export function trainer_check_answer_correct(){
-    const trainer = useTrainer(['verb-danken'], 'dativ', mockRepo);
+    const exercises = [createVerbCaseProduction('verb-danken', 'dativ')];
+    const trainer = useTrainer(exercises, mockRepo);
     const answer = trainer.currentExercise.value.validation.expectedAnswer;
     trainer.checkAnswer(answer);
     assertTrue(trainer.lastResult.value.correct);
@@ -14,20 +16,23 @@ export function trainer_check_answer_correct(){
 }
 
 export function trainer_check_answer_wrong() {
-    const trainer = useTrainer(['verb-danken'], 'dativ', mockRepo);
+    const exercises = [createVerbCaseProduction('verb-danken', 'dativ')];
+    const trainer = useTrainer(exercises, mockRepo);
     trainer.checkAnswer('ihn');
     assertTrue(!trainer.lastResult.value.correct);
 }
 
 export function trainer_rate_resets_last_result() {
-    const trainer = useTrainer(['verb-danken'], 'dativ', mockRepo);
+    const exercises = [createVerbCaseProduction('verb-danken', 'dativ')];
+    const trainer = useTrainer(exercises, mockRepo);
     trainer.checkAnswer('ihm');
     trainer.rate('good');
     assertEqual(trainer.lastResult.value, null);
 }
 
 export function trainer_rate_records_result() {
-    const trainer = useTrainer(['verb-danken'], 'dativ', mockRepo);
+    const exercises = [createVerbCaseProduction('verb-danken', 'dativ')];
+    const trainer = useTrainer(exercises, mockRepo);
     const answer = trainer.currentExercise.value.validation.expectedAnswer;
     trainer.checkAnswer(answer);
     trainer.rate('good');
@@ -44,7 +49,8 @@ export function trainer_persists_card_state() {
         saveAll: () => {},
         clear: () => { Object.keys(store).forEach(k => delete store[k]); }
     };
-    const trainer = useTrainer(['verb-danken'], 'dativ', repo);
+    const exercises = [createVerbCaseProduction('verb-danken', 'dativ')];
+    const trainer = useTrainer(exercises, repo);
     const answer = trainer.currentExercise.value.validation.expectedAnswer;
     trainer.checkAnswer(answer);
     trainer.rate('good');

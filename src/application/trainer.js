@@ -1,5 +1,4 @@
 import { ref, computed } from 'vue';
-import { createVerbCaseProduction } from '../domain/exercise-factory.js';
 import { evaluate } from '../domain/evaluator.js';
 import { createInitialCard, computeNextCard, Rating } from '../domain/scheduler.js';
 // import from application layer data 
@@ -7,23 +6,22 @@ import { createInitialCard, computeNextCard, Rating } from '../domain/scheduler.
 
 /**
  * 
- * @param {*} verbIds
- * @param {*} targetCase 
+ * @param {*} exercises
  * @param {*} cardRepository object with { loadAll, save, saveAll, clear }
  * @returns 
  */
-export function useTrainer(verbIds, targetCase, cardRepository) {
+export function useTrainer(exercises, cardRepository) {
 const lastResult = ref(null);
 const reviewLog = ref([]);
 const isRevealed = ref(false);
+const originalExercises = exercises;
 const queue = ref([]);
 const RATING_MAP = { again: Rating.Again, hard: Rating.Hard, good: Rating.Good, easy: Rating.Easy};
 const savedStates = cardRepository.loadAll();
-queue.value = verbIds.map(id => {
-    const exercise = createVerbCaseProduction(id, targetCase);
-    const saved = savedStates[exercise.id];
-    return { exercise, fsrsCard: saved ?? createInitialCard() };
-});
+queue.value = exercises.map(ex => ({
+    exercise: ex,
+    fsrsCard: savedStates[ex.id] ?? createInitialCard()
+}));
 queue.value.sort((a, b) => a.fsrsCard.due - b.fsrsCard.due )
 
 const isFinished = computed(() => queue.value.length === 0);
@@ -77,13 +75,14 @@ function checkAnswer(rawAnswer){
    return lastResult;
 }
 
+
 function restart() {
     cardRepository.clear();
     reviewLog.value = [];
     lastResult.value = null;
     isRevealed.value = false;
-    queue.value = verbIds.map(id => ({
-        exercise: createVerbCaseProduction(id, targetCase),
+    queue.value = originalExercises.map(ex => ({
+        exercise: ex,
         fsrsCard: createInitialCard()
     }));
     queue.value.sort((a, b) => a.fsrsCard.due - b.fsrsCard.due);
@@ -99,6 +98,7 @@ return {
     checkAnswer,
     lastResult,
     reviewLog,
+    sessionStats,
     restart
 } 
 
