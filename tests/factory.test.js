@@ -1,4 +1,4 @@
-import {createVerbCaseProduction}  from "../src/domain/exercise-factory.js";
+import {createVerbCaseProduction, createVerbGovernance, createPrepositionCase, createVerbCaseRecognition, createErrorCorrection}  from "../src/domain/exercise-factory.js";
 import { assertEqual, assertTrue } from "./assert.js";
 
 export function factory_prompt_agreement(){
@@ -44,5 +44,63 @@ export function factory_fixed_input(){
 
 export function factory_return_null(){
     const ex = createVerbCaseProduction('verb-does-not-exist', 'dativ');
+    assertEqual(ex, null);
+}
+
+export function factory_verb_governance() {
+    const ex = createVerbGovernance('verb-danken');
+    assertEqual(ex.type, 'verbGovernance');
+    assertEqual(ex.validation.expectedAnswer, 'dativ');
+}
+
+export function factory_verb_governance_null() {
+    const ex = createVerbGovernance('verb-does-not-exist');
+    assertEqual(ex,null);
+}
+
+export function factory_preposition_case() {
+    const ex = createPrepositionCase('prep-mit');
+    assertEqual(ex.type, 'prepositionCase');
+    assertEqual(ex.validation.expectedAnswer, 'dativ');
+}
+
+export function factory_preposition_case_null() {
+    const ex = createPrepositionCase('prep-does-not-exist');
+    assertEqual(ex, null);
+}
+
+export function factory_recognition_has_four_options() {
+    const ex = createVerbCaseRecognition('verb-danken', 'dativ', { subject: 'du', object: 'er' });
+    assertEqual(ex.ui.options.length, 4);
+    assertTrue(ex.ui.options.includes('ihm'));
+}
+
+export function factory_recognition_type() {
+    const ex = createVerbCaseRecognition('verb-danken', 'dativ', { subject: 'du', object: 'er' });
+    assertEqual(ex.type, 'verbCaseRecognition');
+}
+
+export function factory_recognition_no_duplicates() {
+    const ex = createVerbCaseRecognition('verb-danken', 'dativ', { subject: 'du', object: 'er' });
+    const unique = new Set(ex.ui.options);
+    assertEqual(unique.size, 4);
+}
+
+export function factory_recognition_null() {
+    const ex = createVerbCaseRecognition('verb-does-not-exist', 'dativ');
+    assertEqual(ex, null);
+}
+
+export function factory_error_correction() {
+    const ex = createErrorCorrection('verb-danken', 'dativ', { subject: 'du', object: 'er' });
+    assertEqual(ex.type, 'errorCorrection');
+    assertEqual(ex.validation.expectedAnswer, 'ihm');
+    assertTrue(ex.validation.wrongAnswer !== ex.validation.expectedAnswer);
+    assertTrue(ex.ui.prompt.includes(ex.validation.wrongAnswer));
+    assertTrue(ex.ui.fullSolution.includes('ihm'));
+}
+
+export function factory_error_correction_null() {
+    const ex = createErrorCorrection('verb-does-not-exist', 'dativ');
     assertEqual(ex, null);
 }
