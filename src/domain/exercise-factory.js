@@ -1,4 +1,15 @@
 import { getVerb, conjugate, getCasePronoun, getGovernedCases } from "./verbs-domain.js";
+import { getPreposition, getPrepositionsByCase  } from "./prepositions-domain.js";
+
+
+function generateDistractors(targetCase, object) {
+
+}
+
+function shuffle(array){
+    const a = [...array];
+    
+}
 
 // check if getGovernedCases not necessary after ui and route import test
 /**
@@ -47,6 +58,51 @@ export function createVerbCaseProduction(verbId, targetCase, options = {}) {
             subject: activeSubject,
             person: subjectToConjugationPerson[activeSubject],
             object: activeObject
+        }
+    };
+}
+
+/**
+ * 
+ * @param {*} verbId 
+ * @returns 
+ */
+export function createVerbGovernance(verbId) {
+    const verb = getVerb(verbId);
+    if(!verb) return null;
+    const cases = getGovernedCases(verbId);
+    return {
+        id: `gov_${verbId}`,
+        type: 'verbGovernance',
+        ui: {
+            title: verb.verbInfinitive,
+            prompt: `Which case does "${verb.verbInfinitive}" govern?`
+        },
+        validation: {
+            expectedAnswer: cases[0],
+            validAnswers: cases
+        }
+    };
+}
+
+/**
+ * 
+ * @param {*} prepositionId 
+ * @returns 
+ */
+export function createPrepositionCase(prepositionId){
+    const prep = getPreposition(prepositionId);
+    if(!prep) return null;
+    return {
+        id: `prep_${prepositionId}`,
+        type: 'prepositionCase',
+        ui: {
+            title: prep.preposition,
+            prompt: `Which case does "${prep.preposition}" govern?`
+        },
+        validation: {
+            expectedAnswer: prep.allowedCases[0],
+            validAnswers: prep.allowedCases
         }
     };
 }

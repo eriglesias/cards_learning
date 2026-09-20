@@ -1,4 +1,4 @@
-import {createVerbCaseProduction}  from "../src/domain/exercise-factory.js";
+import {createVerbCaseProduction, createVerbGovernance, createPrepositionCase}  from "../src/domain/exercise-factory.js";
 import { assertEqual, assertTrue } from "./assert.js";
 
 export function factory_prompt_agreement(){
@@ -46,3 +46,26 @@ export function factory_return_null(){
     const ex = createVerbCaseProduction('verb-does-not-exist', 'dativ');
     assertEqual(ex, null);
 }
+
+export function factory_verb_governance() {
+    const ex = createVerbGovernance('verb-danken');
+    assertEqual(ex.type, 'verbGovernance');
+    assertEqual(ex.validation.expectedAnswer, 'dativ');
+}
+
+export function factory_verb_governance_null() {
+    const ex = createVerbGovernance('verb-does-not-exist');
+    assertEqual(ex,null);
+}
+
+export function factory_preposition_case() {
+    const ex = createPrepositionCase('prep-mit');
+    assertEqual(ex.type, 'prepositionCase');
+    assertEqual(ex.validation.expectedAnswer, 'dativ');
+}
+
+export function factory_preposition_case_null() {
+    const ex = createPrepositionCase('prep-does-not-exist');
+    assertEqual(ex, null);
+}
+
