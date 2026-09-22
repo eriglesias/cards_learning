@@ -1,4 +1,4 @@
-import {createVerbCaseProduction, createVerbGovernance, createPrepositionCase}  from "../src/domain/exercise-factory.js";
+import {createVerbCaseProduction, createVerbGovernance, createPrepositionCase, createVerbCaseRecognition}  from "../src/domain/exercise-factory.js";
 import { assertEqual, assertTrue } from "./assert.js";
 
 export function factory_prompt_agreement(){
@@ -69,3 +69,24 @@ export function factory_preposition_case_null() {
     assertEqual(ex, null);
 }
 
+export function factory_recognition_has_four_options() {
+    const ex = createVerbCaseRecognition('verb-danken', 'dativ', { subject: 'du', object: 'er' });
+    assertEqual(ex.ui.options.length, 4);
+    assertTrue(ex.ui.options.includes('ihm'));
+}
+
+export function factory_recognition_type() {
+    const ex = createVerbCaseRecognition('verb-danken', 'dativ', { subject: 'du', object: 'er' });
+    assertEqual(ex.type, 'verbCaseRecognition');
+}
+
+export function factory_recognition_no_duplicates() {
+    const ex = createVerbCaseRecognition('verb-danken', 'dativ', { subject: 'du', object: 'er' });
+    const unique = new Set(ex.ui.options);
+    assertEqual(unique.size, 4);
+}
+
+export function factory_recognition_null() {
+    const ex = createVerbCaseRecognition('verb-does-not-exist', 'dativ');
+    assertEqual(ex, null);
+}

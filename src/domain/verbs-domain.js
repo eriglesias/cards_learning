@@ -135,6 +135,13 @@ function getGovernedCases(verbId){
     }
 }
 
+/**
+ * 
+ * @returns 
+ */
+function getAllVerbIds(){
+    return Object.keys(normalized.verbsById);
+}
 
 // Grammar delegation layer
 
@@ -160,4 +167,4 @@ function getCasePronoun(verbCase, subject){
 // sampleVerb(case): returns random verb matching case 
 
 
-export { getVerb , conjugate, getVerbsByCase, getVerbArguments, getGovernedCases, getCasePronoun};
+export { getVerb , conjugate, getVerbsByCase, getVerbArguments, getGovernedCases, getCasePronoun, getAllVerbIds};

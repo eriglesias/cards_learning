@@ -11,6 +11,10 @@ const routes = [
     
     { path: '/', component: HomeView},
     { path: '/select', component: SelectLearning},
+    { path: '/learn/governance',
+        name: 'learn-governance',
+        component: LearningVerbs
+    },
     { path: '/learn/verbs/:case',
         name: 'learn-verbs', 
         component: LearningVerbs,

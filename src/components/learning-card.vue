@@ -19,8 +19,8 @@
     const emit = defineEmits(['submit']);
     const userInput = ref('');
 
-    function submitAnswer(){
-        emit('submit', userInput.value);
+    function submitAnswer(answer){
+        emit('submit', answer ?? userInput.value);
         userInput.value = '';
     }
 
@@ -31,8 +31,16 @@
         <div v-if="!isRevealed" id="op_1">
             <CardTitle :card-title="props.exercise.ui.title" />
             <SentenceTemplate :sentence-template="props.exercise.ui.prompt" />
-            <input v-model="userInput" @keyup.enter="submitAnswer">
-            <button @click="submitAnswer" :disabled="userInput === ''">Submit Answer</button>
+            <div v-if="props.exercise.type === 'verbCaseRecognition'">
+                <button v-for="opt in props.exercise.ui.options"
+                @click="submitAnswer(opt)">
+                {{ opt }}
+            </button>
+            </div>
+            <div v-else>
+                <input v-model="userInput">
+                <button @click="submitAnswer()">Submit Answer</button>
+            </div>
         </div>
         <div v-else id="op_2">
             <CardTitle :card-title="props.exercise.ui.title" />

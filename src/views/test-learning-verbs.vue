@@ -1,15 +1,27 @@
 <script setup>
 
-    import { createVerbCaseProduction } from '../domain/exercise-factory.js';
+    import { createVerbCaseProduction, createVerbCaseRecognition, createVerbGovernance } from '../domain/exercise-factory.js';
     import { cardRepository } from '../infrastructure/card-repository.js';
     import { useTrainer } from '../application/trainer';
     import { useRoute} from 'vue-router';
     import LearningCard from '../components/learning-card.vue';
-    import { getVerbsByCase} from '../domain/verbs-domain.js';
+    import { getVerbsByCase, getAllVerbIds} from '../domain/verbs-domain.js';
     const route = useRoute()
     const selectedCase = route.params.case;
-    const verbIds = getVerbsByCase(selectedCase);
-    const exercises = verbIds.map(id => createVerbCaseProduction(id, selectedCase));
+    const verbIds = exerciseType === 'governance' ? getAllVerbIds() : getVerbsByCase(selectedCase);
+    const exerciseType = route.query.type || 'production';
+    let exercises;
+    switch(exerciseType){
+        case 'recognition':
+        exercises = verbIds.map(id => createVerbCaseRecognition(id, selectedCase));
+        break;
+        case 'governance':
+        exercises = verbIds.map(id => createVerbGovernance(id));
+        break;
+        default:
+        exercises = verbIds.map(id => createVerbCaseProduction(id, selectedCase));
+    }
+
 
     const {
         currentExercise,
