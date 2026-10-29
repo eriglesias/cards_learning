@@ -161,7 +161,7 @@ function conjugate(verbId, person){
  * @returns 
  */
 function getCasePronoun(verbCase, subject){
-    return getPronoun(verbCase, subject);
+    return getPronoun(normalizeCase(verbCase), subject);
 } 
 // getLearningCandidates(criteria): filter verbs for learning mode
 // sampleVerb(case): returns random verb matching case 

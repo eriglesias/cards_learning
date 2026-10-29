@@ -35,7 +35,7 @@ const pronouns = {
         sie_pl: "ihnen",
         Sie_pl: "Ihnen",
     },
-    accusativ: {
+    akkusativ: {
         ich: "mich",
         du: "dich",
         er: "ihn",
