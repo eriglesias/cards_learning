@@ -142,7 +142,7 @@ function applyPhonologicalRules(stem, person) {
     if ((stem.endsWith('d') || stem.endsWith('t')) && person === '2sg') {
         return 'est';
     } else if ((stem.endsWith('d') || stem.endsWith('t')) && 
-               (person === '2sg' || person === '2pl')) {
+               (person === '2sg' || person === '2pl' || person === '3sg')) {
         return 'et';
     } else if ((stem.endsWith('s') || stem.endsWith('ß') || stem.endsWith('x') || stem.endsWith('z')) && 
                (person === '2sg')) {

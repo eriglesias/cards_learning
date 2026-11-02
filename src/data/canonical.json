@@ -7,6 +7,8 @@
                             "kind": "verb",
                             "verbInfinitive": "antworten",
                             "subjectRole": "agent",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "arguments": [
                                 {
                                    "role": "experiencer",
@@ -19,6 +21,8 @@
                             "kind": "verb",
                             "verbInfinitive": "applaudieren",
                             "subjectRole": "agent",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "arguments": [
                                 {
                                     "role": "experiencer",
@@ -31,6 +35,8 @@
                             "kind": "verb",
                             "verbInfinitive": "begegnen",
                             "subjectRole": "agent",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "arguments": [
                                 {
                                    "role": "experiencer",
@@ -43,6 +49,8 @@
                             "kind": "verb",
                             "verbInfinitive": "beistehen",
                             "subjectRole": "agent",
+                            "verbType": "prefix",
+                            "separability": "separable",
                             "arguments": [
                                 {
                                    "role": "experiencer",
@@ -55,6 +63,8 @@
                             "kind": "verb",
                             "verbInfinitive": "danken",
                             "subjectRole": "agent",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "arguments": [
                                 {
                                     "role": "experiencer",
@@ -68,6 +78,8 @@
                             "kind": "verb",
                             "subjectRole": "expletive",
                             "verbInfinitive": "fehlen",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "arguments": [
                                 {
                                     "role": "experiencer",
@@ -80,6 +92,8 @@
                             "id": "verb-gefallen",
                             "kind": "verb",
                             "subjectRole": "expletive",
+                            "verbType": "prefixed",
+                            "separability": "inseparable",
                             "verbInfinitive": "gefallen",
                             "arguments": [
                                     {
@@ -92,6 +106,8 @@
                             "id": "verb-gelingen",
                             "kind": "verb",
                             "subjectRole": "expletive",
+                            "verbType": "prefixed",
+                            "separability": "inseparable",
                             "verbInfinitive": "gelingen",
                             "arguments": [
                                 {
@@ -105,6 +121,8 @@
                             "id": "verb-genuegen",
                             "kind": "verb",
                             "subjectRole": "agent",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "verbInfinitive": "genügen",
                             "arguments": [
                                     {
@@ -117,6 +135,8 @@
                             "id": "verb-misslingen",
                             "kind": "verb",
                             "subjectRole": "expletive",
+                            "verbType": "prefixed",
+                            "separability": "inseparable",
                             "verbInfinitive": "misslingen",
                             "arguments": [
                                     {
@@ -129,6 +149,8 @@
                             "id": "verb-nuetzen",
                             "kind": "verb",
                             "subjectRole": "agent",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "verbInfinitive": "nützen",
                             "arguments": [
                                 {
@@ -142,6 +164,8 @@
                             "id": "verb-passieren",
                             "kind": "verb",
                             "subjectRole": "expletive",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "verbInfinitive": "passieren",
                             "arguments": [
                             ],
@@ -152,6 +176,8 @@
                             "id": "verb-schaden",
                             "kind": "verb",
                             "subjectRole": "agent",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "verbInfinitive": "schaden",
                             "arguments": [
                                     {
@@ -164,6 +190,8 @@
                             "id": "verb-schmecken",
                             "kind": "verb",
                             "subjectRole": "agent",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "verbInfinitive": "schmecken",
                             "arguments": [
                                 {
@@ -177,6 +205,8 @@
                             "kind": "verb",
                             "verbInfinitive": "anbieten",
                             "subjectRole": "agent",
+                            "verbType": "prefix",
+                            "separability": "separable",
                             "arguments": [
                                 {
                                     "role": "recipient",
@@ -193,6 +223,8 @@
                             "kind": "verb",
                             "verbInfinitive": "beantworten",
                            "subjectRole": "agent",
+                            "verbType": "prefixed",
+                            "separability": "inseparable",
                             "arguments": [    
                             {
                                 "role": "recipient", "case": "dativ", "optional": true
@@ -207,6 +239,8 @@
                         "kind": "verb",
                         "verbInfinitive": "befehlen",
                         "subjectRole": "agent",
+                        "verbType": "prefixed",
+                        "separability": "inseparable",
                         "arguments": [
                                 {   "role": "recipient",
                                     "case": "dativ"
@@ -222,6 +256,8 @@
                             "kind": "verb",
                             "verbInfinitive": "bringen",
                             "subjectRole": "agent",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "arguments": [
                                 {   "role": "recipient",
                                     "case": "dativ"
@@ -237,6 +273,8 @@
                             "kind": "verb",
                             "verbInfinitive": "empfehlen",
                             "subjectRole": "agent",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "arguments": 
                                 [
                                     {   
@@ -254,6 +292,8 @@
                             "kind": "verb",
                             "verbInfinitive": "erklären",
                             "subjectRole": "agent",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "arguments": 
                                 [
                                     {   
@@ -271,6 +311,8 @@
                             "kind": "verb",
                             "verbInfinitive": "erzählen",
                             "subjectRole": "agent",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "arguments": 
                                 [
                                     {  
@@ -288,6 +330,8 @@
                             "kind": "verb",
                             "verbInfinitive": "geben",
                             "subjectRole": "agent",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "conjugation": {
                                 "present": {
                                     "2sg": "gibst",
@@ -310,6 +354,8 @@
                             "kind": "verb",
                             "verbInfinitive": "glauben",
                             "subjectRole": "agent",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "arguments": 
                                 [
                                     {   
@@ -327,6 +373,8 @@
                             "kind": "verb",
                             "verbInfinitive": "leihen",
                             "subjectRole": "agent",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "arguments": 
                                 [
                                     {   
@@ -343,6 +391,8 @@
                             "id": "verb-lieferen",
                             "verbInfinitive": "liefern",
                             "subjectRole": "agent",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "kind": "verb",
                             "arguments": 
                                 [
@@ -360,6 +410,8 @@
                             "id": "verb-nehmen",
                             "verbInfinitive": "nehmen",
                             "subjectRole": "agent",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "kind": "verb",
                             "arguments": [    
                                 {
@@ -372,6 +424,8 @@
                             "id": "verb-sagen",
                             "verbInfinitive": "sagen",
                             "subjectRole": "agent",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "kind": "verb",
                             "arguments": [
                                 {   
@@ -388,6 +442,8 @@
                             "id": "verb-schenken",
                             "verbInfinitive": "schenken",
                             "subjectRole": "agent",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "kind": "verb",
                             "arguments": [
                                 {   
@@ -404,6 +460,8 @@
                             "id": "verb-schicken",
                             "verbInfinitive": "schicken",
                             "subjectRole": "agent",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "kind": "verb",
                             "arguments": 
                                 [
@@ -420,6 +478,8 @@
                             "id": "verb-schreiben",
                             "verbInfinitive": "schreiben",
                             "subjectRole": "agent",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "kind": "verb",
                             "arguments": 
                                 [
@@ -437,6 +497,8 @@
                             "id": "verb-senden",
                             "verbInfinitive": "senden",
                             "subjectRole": "agent",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "kind": "verb",
                             "arguments": 
                                 [
@@ -454,6 +516,8 @@
                             "id": "verb-stehlen",
                             "verbInfinitive": "stehlen",
                             "subjectRole": "agent",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "kind": "verb",
                             "arguments": 
                                 [
@@ -471,6 +535,8 @@
                             "id": "verb-verbieten",
                             "verbInfinitive": "verbieten",
                             "subjectRole": "agent",
+                            "verbType": "prefixed",
+                            "separability": "inseparable",
                             "kind": "verb",
                             "arguments": 
                                 [
@@ -488,6 +554,8 @@
                             "id": "verb-versprechen",
                             "verbInfinitive": "versprechen",
                             "subjectRole": "agent",
+                            "verbType": "prefixed",
+                            "separability": "separable",
                             "kind": "verb",
                             "arguments": 
                                 [
@@ -505,6 +573,8 @@
                             "id": "verb-zeigen",
                             "verbInfinitive": "zeigen",
                             "subjectRole": "agent",
+                            "verbType": "simple",
+                            "separability": "not_applicable",
                             "kind": "verb",
                             "arguments": 
                                 [
@@ -521,6 +591,8 @@
                         {
                                 "id": "verb-abhaengen",
                                 "subjectRole": "agent",
+                                "verbType": "prefixed",
+                                "separability": "separable",
                                 "verbInfinitive": "abhängen",
                                 "kind": "verb",
                                 "arguments": [
@@ -534,6 +606,8 @@
                         {
                                 "id": "verb-abraten",
                                 "subjectRole": "agent",
+                                "verbType": "prefixed",
+                                "separability": "separable",
                                 "kind": "verb",
                                 "verbInfinitive": "abraten",
                                 "arguments": [
@@ -547,6 +621,8 @@
                         {
                                 "id": "verb-achten",
                                 "subjectRole": "agent",
+                                "verbType": "simple",
+                                "separability": "not_applicable",
                                 "kind": "verb",
                                 "verbInfinitive": "achten / Acht geben",
                                 "arguments": [
@@ -573,6 +649,8 @@
                             {
                                 "id": "verb-sich-anmelden",
                                 "subjectRole": "agent",
+                                "verbType": "prefixed",
+                                "separability": "separable",
                                 "reflexive": true,
                                 "kind": "verb",
                                 "verbInfinitive": "sich anmelden",
